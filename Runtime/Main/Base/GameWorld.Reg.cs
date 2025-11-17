@@ -34,7 +34,7 @@ namespace GameSample
         /// </summary>
         private static void OnRegContextInitialize()
         {
-            Game.Module.Protocol.Protobuf.GameModule.OnInitialize();
+            GameEngine.GameApi.RegisterHotModule<Game.Module.Protocol.Protobuf.GameModule>();
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace GameSample
         /// </summary>
         private static void OnRegContextCleanup()
         {
-            Game.Module.Protocol.Protobuf.GameModule.OnCleanup();
+            GameEngine.GameApi.UnregisterHotModule<Game.Module.Protocol.Protobuf.GameModule>();
         }
     }
 }
