@@ -1,21 +1,21 @@
 {
-  "name": "com.novaframework.unity.sample",
-  "displayName": "NovaFramework.Sample",
-  "description": "The sample case of function module for NovaFramework",
+  "name": "com.gameframework.unity.sample",
+  "displayName": "GameFramework.Sample",
+  "description": "The sample case of function module for GameFramework",
   "version": "1.0.1",
   "unity": "2018.3",
   "unityRelease": "0f1",
   "license": "MIT",
-  "keywords": [ "Unity", "NovaFramework", "Sample" ],
+  "keywords": [ "Unity", "GameFramework", "Sample" ],
   "author": {
     "name": "hurley",
     "email": "yoseasoft@163.com",
-    "url": "https://github.com/yoseasoft/com.novaframework.unity.sample"
+    "url": "https://github.com/yoseasoft/com.gameframework.unity.sample"
   },
   "repository": {
-    "name": "com.novaframework.unity.sample",
+    "name": "com.gameframework.unity.sample",
     "type": "git",
-    "url": "https://github.com/yoseasoft/com.novaframework.unity.sample.git"
+    "url": "https://github.com/yoseasoft/com.gameframework.unity.sample.git"
   },
   "relatedPackages": {},
   "dependencies": {
