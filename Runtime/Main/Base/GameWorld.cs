@@ -30,12 +30,9 @@ namespace GameSample
     /// </summary>
     internal static partial class GameWorld
     {
-        public static void Run()
+        public static void Run(string tutorialType)
         {
-            // 初始化关键模块
-            OnRegContextInitialize();
-
-            SampleFiltingProcessor.AddSampleFilter(NovaEngine.Configuration.tutorialSampleType);
+            SampleFiltingProcessor.AddSampleFilter(tutorialType);
 
             RegAssemblyNames(GlobalMacros.AssemblyName);
 
@@ -55,9 +52,6 @@ namespace GameSample
             GameEngine.GameLibrary.OnApplicationShutdown(OnApplicationResponseCallback);
 
             SampleFiltingProcessor.RemoveSampleFilter();
-
-            // 清理关键模块
-            OnRegContextCleanup();
         }
 
         /// <summary>
