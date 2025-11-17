@@ -50,7 +50,7 @@ namespace GameSample.PerformanceAnalysis
                 return;
             }
 
-            int c = 100;
+            int c = 500;
 
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
             stopwatch.Start();
@@ -104,14 +104,17 @@ namespace GameSample.PerformanceAnalysis
                 GamePlayer player = mainDataComponent.game_players[n];
                 for (int u = 0; u < c; ++u)
                 {
-                    player.Call(player.Update, GameEngine.AspectBehaviourType.Update);
-                    player.Call(player.LateUpdate, GameEngine.AspectBehaviourType.LateUpdate);
+                    //player.Call(player.Update, GameEngine.AspectBehaviourType.Update);
+                    //player.Call(player.LateUpdate, GameEngine.AspectBehaviourType.LateUpdate);
+                    GameEngine.GameApi.CallMethod(player, player.Update, GameEngine.AspectBehaviourType.Update);
+                    GameEngine.GameApi.CallMethod(player, player.LateUpdate, GameEngine.AspectBehaviourType.LateUpdate);
+
                     //player.Call("Update");
                     //player.Call("LateUpdate");
                 }
             }
             stopwatch.Stop();
-            Debugger.Info("成功调度游戏用户数据{%d}次，耗时{%d}毫秒！", mainDataComponent.game_players.Count * c, stopwatch.ElapsedMilliseconds);
+            Debugger.Info("成功调度游戏用户数据{%d}次，计数{%d}，耗时{%d}毫秒！", c, mainDataComponent.game_players.Count, stopwatch.ElapsedMilliseconds);
 
             stopwatch.Restart();
             for (int n = 0; n < mainDataComponent.native_players.Count; ++n)
@@ -124,7 +127,7 @@ namespace GameSample.PerformanceAnalysis
                 }
             }
             stopwatch.Stop();
-            Debugger.Info("成功调度本地用户数据{%d}次，耗时{%d}毫秒！", mainDataComponent.native_players.Count * c, stopwatch.ElapsedMilliseconds);
+            Debugger.Info("成功调度本地用户数据{%d}次，计数{%d}，耗时{%d}毫秒！", c, mainDataComponent.native_players.Count, stopwatch.ElapsedMilliseconds);
 
             PrintUsage();
         }

@@ -1,7 +1,6 @@
 /// -------------------------------------------------------------------------------
 /// Sample Module for GameEngine Framework
 ///
-/// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,18 +25,24 @@
 namespace GameSample
 {
     /// <summary>
-    /// 演示案例全局宏定义
+    /// 演示案例总控
     /// </summary>
-    internal static class GlobalMacros
+    internal static partial class GameWorld
     {
         /// <summary>
-        /// 示例程序集名称
+        /// 注册上下文的初始化函数
         /// </summary>
-        internal const string AssemblyName = "Game.Sample";
+        private static void OnRegContextInitialize()
+        {
+            Game.Module.Protocol.Protobuf.GameModule.OnInitialize();
+        }
 
         /// <summary>
-        /// 用于检测刷新接口中的日志输出的启用状态标识
+        /// 注册上下文的清理函数
         /// </summary>
-        public readonly static bool LoopOutputEnabled = true;
+        private static void OnRegContextCleanup()
+        {
+            Game.Module.Protocol.Protobuf.GameModule.OnCleanup();
+        }
     }
 }

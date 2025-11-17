@@ -32,6 +32,9 @@ namespace GameSample
     {
         public static void Run()
         {
+            // 初始化关键模块
+            OnRegContextInitialize();
+
             SampleFiltingProcessor.AddSampleFilter(NovaEngine.Configuration.tutorialSampleType);
 
             RegAssemblyNames(GlobalMacros.AssemblyName);
@@ -52,6 +55,9 @@ namespace GameSample
             GameEngine.GameLibrary.OnApplicationShutdown(OnApplicationResponseCallback);
 
             SampleFiltingProcessor.RemoveSampleFilter();
+
+            // 清理关键模块
+            OnRegContextCleanup();
         }
 
         /// <summary>
