@@ -44,7 +44,7 @@ namespace GameSample.DependencyInject
         static void OnConfigureFileLoadNotify(this MainScene self, int keycode, int operationType)
         {
             /*
-            GameLibrary.ReloadBeanConfigure((path, ms) =>
+            GameEngine.ApplicationContext.LoadBeanConfigure((path, ms) =>
             {
                 if (string.IsNullOrEmpty(path))
                     path = @"bean";
@@ -66,7 +66,7 @@ namespace GameSample.DependencyInject
             });
             */
 
-            GameEngine.GameLibrary.ReloadBeanConfigure((path, ms) =>
+            GameEngine.ApplicationContext.LoadBeanConfigure((path, ms) =>
             {
                 if (string.IsNullOrEmpty(path))
                     path = @"main";
