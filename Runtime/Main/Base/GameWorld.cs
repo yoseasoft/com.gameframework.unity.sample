@@ -34,8 +34,15 @@ namespace GameSample
         {
             SampleFiltingProcessor.AddSampleFilter(tutorialType);
 
+            // 加载应用上下文
+            LoadApplicationContexts();
+
+            // 自动注册全部热加载模块
+            GameEngine.GameApi.AutoRegisterAllHotModulesOfContextConfigure();
+
             RegAssemblyNames(GlobalMacros.AssemblyName);
 
+            // 加载所有程序集
             LoadAllAssemblies();
 
             // 启动应用通知回调接口
@@ -50,6 +57,9 @@ namespace GameSample
 
             // 关闭应用通知回调接口
             GameEngine.GameLibrary.OnApplicationShutdown(OnApplicationResponseCallback);
+
+            // 自动注销所有热加载模块
+            GameEngine.GameApi.AutoUnregisterAllHotModulesOfContextConfigure();
 
             SampleFiltingProcessor.RemoveSampleFilter();
         }

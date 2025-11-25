@@ -34,12 +34,12 @@ namespace GameSample.DependencyInject
     {
         static IDictionary<string, string> _dataConfigures = new Dictionary<string, string>()
         {
-            { "main", MainFile },
-            { "monster", MonsterFile },
-            { "component", ComponentFile },
+            { @"main", MainConfigureFile },
+            { @"monster", MonsterConfigureFile },
+            { @"component", ComponentConfigureFile },
         };
 
-        const string MainFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
+        const string MainConfigureFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
                 <root>
                 <!--
                   基础游戏角色的实体定义，它是所有角色类实体的父类
@@ -61,7 +61,7 @@ namespace GameSample.DependencyInject
                 <file include=""component""/>
                 </root>";
 
-        const string MonsterFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
+        const string MonsterConfigureFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
                 <root>
                 <bean name=""sword_monster"" class_type=""GameSample.DependencyInject.Monster"" singleton=""false"">
                     <component reference_type=""GameSample.DependencyInject.GoblinAiWithSwordComponent"" activation_on=""Initialize""/>
@@ -71,7 +71,7 @@ namespace GameSample.DependencyInject
                 </bean>
                 </root>";
 
-        const string ComponentFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
+        const string ComponentConfigureFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
                 <root>
                 <bean name=""identityComponent"" class_type=""GameSample.DependencyInject.IdentityComponent"" singleton=""false"">
                 </bean>
