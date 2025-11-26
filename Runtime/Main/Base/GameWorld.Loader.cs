@@ -42,8 +42,8 @@ namespace GameSample
         const string ApplicationConfigureFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
                 <root>
                     <!-- 配置热加载模块 -->
-                    <hot-module class_type=""Game.Module.Protocol.Protobuf.GameModule""/>
-                    <hot-module class_type=""Game.Module.View.Fairygui.GameModule""/>
+                    <hot-module name=""Game.Module.Protocol.Protobuf""/>
+                    <hot-module name=""Game.Module.View.Fairygui""/>
 
                     <!-- 配置bean文件导入 -->
                     <!-- bean-import url=""bean""/ -->
