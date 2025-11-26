@@ -2,6 +2,8 @@
 
 NovaFramework的教程示例库，提供框架使用的各个模块教程示例。
 
+关于更多引擎介绍，请前往[NovaFramework](https://github.com/yoseasoft/NovaFramework)查看。
+
 ## 使用文档
 
 1. 在应用加载模块增加==Game.Sample==程序集加载流程；
