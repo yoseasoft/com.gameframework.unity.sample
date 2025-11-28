@@ -34,7 +34,7 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
     /// </summary>
     internal static class FunctionGenerationComparison
     {
-        private abstract class Animal
+        public abstract class Animal
         {
             public static string AnimalTag = "Animal";
             public int uid;
@@ -49,7 +49,7 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
             public abstract void SayGoodbye(Animal target);
         }
 
-        private class Dog : Animal
+        public class Dog : Animal
         {
             public static string DogName = "people's friend";
             public int speed;
@@ -73,7 +73,7 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
             }
         }
 
-        private class Hashiqi : Dog
+        public class Hashiqi : Dog
         {
             public static string DogTag = "no anything";
             public int attack;
@@ -113,7 +113,7 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
             }
         }
 
-        private class Alasijia : Dog
+        public class Alasijia : Dog
         {
             public static string DogTag = "no anything";
             public int attack;
@@ -153,12 +153,14 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
             Debugger.Info("_________________________________________________");
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 
-            Type targetType = typeof(Hashiqi);
+            //Type targetType = typeof(Hashiqi);
+            Type targetType = typeof(HashiqiExtension);
 
             Hashiqi obj = new Hashiqi();
             Alasijia obj2 = new Alasijia();
 
-            MethodInfo m1 = targetType.GetMethod("SayHello", BindingFlags.Public | BindingFlags.Instance);
+            //MethodInfo m1 = targetType.GetMethod("SayHello", BindingFlags.Public | BindingFlags.Instance);
+            MethodInfo m1 = targetType.GetMethod("SayHello", BindingFlags.Public | BindingFlags.Static);
             //MethodInfo m2 = targetType.GetMethod("SayGoodbye", BindingFlags.Public | BindingFlags.Instance);
 
             Delegate d1 = NovaEngine.Utility.Reflection.CreateGenericActionDelegate(null, m1);
@@ -174,16 +176,16 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
             obj.Health = 100;
             obj2.Health = 100;
 
-            d1 = NovaEngine.Utility.Reflection.CreateGenericActionDelegate(obj, m1);
+            //d1 = NovaEngine.Utility.Reflection.CreateGenericActionDelegate(obj, m1);
 
-            stopwatch.Restart();
-            for (int n = 0; n < 1000000; ++n)
-                d1.DynamicInvoke(obj2);
-            stopwatch.Stop();
-            Debugger.Info("hashiqi health = {%d}, alasijia health = {%d}, using time = {%d}", obj.Health, obj2.Health, stopwatch.ElapsedMilliseconds);
+            //stopwatch.Restart();
+            //for (int n = 0; n < 1000000; ++n)
+            //    d1.DynamicInvoke(obj2);
+            //stopwatch.Stop();
+            //Debugger.Info("hashiqi health = {%d}, alasijia health = {%d}, using time = {%d}", obj.Health, obj2.Health, stopwatch.ElapsedMilliseconds);
 
-            obj.Health = 100;
-            obj2.Health = 100;
+            //obj.Health = 100;
+            //obj2.Health = 100;
 
             //Delegate myDelegate = Delegate.CreateDelegate(typeof(Action<Animal>), null, m1);
 
@@ -267,6 +269,15 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
             }
             stopwatch.Stop();
             Debugger.Warn($"Run soldier for call for {count} times, using elapsed time was {stopwatch.ElapsedMilliseconds}. obj's health = {obj.Health}, obj2's health = {obj2.Health}.");
+        }
+    }
+
+    internal static class HashiqiExtension
+    {
+        public static void SayHello(this FunctionGenerationComparison.Hashiqi self, FunctionGenerationComparison.Animal target)
+        {
+            self.Health += 1;
+            ((FunctionGenerationComparison.Dog) target).Health += 5;
         }
     }
 }
