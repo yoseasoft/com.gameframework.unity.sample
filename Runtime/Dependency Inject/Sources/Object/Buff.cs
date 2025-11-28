@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.DependencyInject
+namespace Game.Framework.Sample.DependencyInject
 {
     /// <summary>
     /// Buff对象基类

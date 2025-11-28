@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.SymbolParser
+namespace Game.Framework.Sample.SymbolParser
 {
     /// <summary>
     /// 状态接口类

@@ -29,7 +29,7 @@ using SystemStringBuilder = System.Text.StringBuilder;
 using SystemMethodInfo = System.Reflection.MethodInfo;
 using SystemBindingFlags = System.Reflection.BindingFlags;
 
-namespace GameSample.PerformanceAnalysis
+namespace Game.Framework.Sample.PerformanceAnalysis
 {
     /// <summary>
     /// 主场景逻辑类

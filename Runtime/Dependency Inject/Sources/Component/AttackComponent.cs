@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.DependencyInject
+namespace Game.Framework.Sample.DependencyInject
 {
     /// <summary>
     /// 攻击组件类

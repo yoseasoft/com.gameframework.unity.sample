@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.DependencyInject
+namespace Game.Framework.Sample.DependencyInject
 {
     /// <summary>
     /// 弓箭哥布林的AI组件类

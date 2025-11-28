@@ -25,7 +25,7 @@
 
 using SystemStringBuilder = System.Text.StringBuilder;
 
-namespace GameSample.StateTransition
+namespace Game.Framework.Sample.StateTransition
 {
     /// <summary>
     /// 战斗对象逻辑类

@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.DependencyInject
+namespace Game.Framework.Sample.DependencyInject
 {
     /// <summary>
     /// 角色对象基类

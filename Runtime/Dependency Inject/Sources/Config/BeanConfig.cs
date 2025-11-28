@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace GameSample.DependencyInject
+namespace Game.Framework.Sample.DependencyInject
 {
     /// <summary>
     /// Bean配置数据管理类
@@ -44,18 +44,18 @@ namespace GameSample.DependencyInject
                 <!--
                   基础游戏角色的实体定义，它是所有角色类实体的父类
                   -->
-                <bean name=""game_actor"" class_type=""GameSample.DependencyInject.Actor"" singleton=""false"" inherited=""true"">
+                <bean name=""game_actor"" class_type=""Game.Framework.Sample.DependencyInject.Actor"" singleton=""false"" inherited=""true"">
                     <component reference_name=""identityComponent"" activation_on=""Initialize""/>
                 </bean>
                 <!-- 士兵类型的实体定义 -->
-                <bean name=""soldier"" class_type=""GameSample.DependencyInject.Soldier"" singleton=""false"">
+                <bean name=""soldier"" class_type=""Game.Framework.Sample.DependencyInject.Soldier"" singleton=""false"">
                     <component reference_name=""attributeComponent"" activation_on=""Initialize""/>
-                    <component reference_type=""GameSample.DependencyInject.TransformComponent"" activation_on=""Initialize""/>
-                    <component reference_type=""GameSample.DependencyInject.MoveComponent"" activation_on=""Initialize""/>
+                    <component reference_type=""Game.Framework.Sample.DependencyInject.TransformComponent"" activation_on=""Initialize""/>
+                    <component reference_type=""Game.Framework.Sample.DependencyInject.MoveComponent"" activation_on=""Initialize""/>
                 </bean>
-                <bean name=""local_player"" class_type=""GameSample.DependencyInject.Player"" singleton=""false"">
-                    <field name=""buff"" reference_type=""GameSample.DependencyInject.Buff""/>
-                    <component reference_type=""GameSample.DependencyInject.SkillComponent"" activation_on=""Initialize""/>
+                <bean name=""local_player"" class_type=""Game.Framework.Sample.DependencyInject.Player"" singleton=""false"">
+                    <field name=""buff"" reference_type=""Game.Framework.Sample.DependencyInject.Buff""/>
+                    <component reference_type=""Game.Framework.Sample.DependencyInject.SkillComponent"" activation_on=""Initialize""/>
                 </bean>
                 <file include=""monster""/>
                 <file include=""component""/>
@@ -63,24 +63,24 @@ namespace GameSample.DependencyInject
 
         const string MonsterConfigureFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
                 <root>
-                <bean name=""sword_monster"" class_type=""GameSample.DependencyInject.Monster"" singleton=""false"">
-                    <component reference_type=""GameSample.DependencyInject.GoblinAiWithSwordComponent"" activation_on=""Initialize""/>
+                <bean name=""sword_monster"" class_type=""Game.Framework.Sample.DependencyInject.Monster"" singleton=""false"">
+                    <component reference_type=""Game.Framework.Sample.DependencyInject.GoblinAiWithSwordComponent"" activation_on=""Initialize""/>
                 </bean>
-                <bean name=""bow_monster"" class_type=""GameSample.DependencyInject.Monster"" singleton=""false"">
-                    <component reference_type=""GameSample.DependencyInject.GoblinAiWithBowComponent"" activation_on=""Initialize""/>
+                <bean name=""bow_monster"" class_type=""Game.Framework.Sample.DependencyInject.Monster"" singleton=""false"">
+                    <component reference_type=""Game.Framework.Sample.DependencyInject.GoblinAiWithBowComponent"" activation_on=""Initialize""/>
                 </bean>
                 </root>";
 
         const string ComponentConfigureFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
                 <root>
-                <bean name=""identityComponent"" class_type=""GameSample.DependencyInject.IdentityComponent"" singleton=""false"">
+                <bean name=""identityComponent"" class_type=""Game.Framework.Sample.DependencyInject.IdentityComponent"" singleton=""false"">
                 </bean>
                 <!-- 属性组件 -->
-                <bean name=""attributeComponent"" class_type=""GameSample.DependencyInject.AttributeComponent"" singleton=""false"">
+                <bean name=""attributeComponent"" class_type=""Game.Framework.Sample.DependencyInject.AttributeComponent"" singleton=""false"">
                 </bean>
                 <!-- 攻击组件 -->
-                <bean name=""attackComponent"" class_type=""GameSample.DependencyInject.AttackComponent"" singleton=""false"">
-                    <field name=""weapon"" reference_type=""GameSample.DependencyInject.Weapon""/>
+                <bean name=""attackComponent"" class_type=""Game.Framework.Sample.DependencyInject.AttackComponent"" singleton=""false"">
+                    <field name=""weapon"" reference_type=""Game.Framework.Sample.DependencyInject.Weapon""/>
                 </bean>
                 </root>";
 

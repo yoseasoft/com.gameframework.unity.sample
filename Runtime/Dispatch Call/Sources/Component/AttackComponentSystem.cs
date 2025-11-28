@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.DispatchCall
+namespace Game.Framework.Sample.DispatchCall
 {
     /// <summary>
     /// 攻击组件逻辑类

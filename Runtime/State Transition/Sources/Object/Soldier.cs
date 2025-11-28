@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.StateTransition
+namespace Game.Framework.Sample.StateTransition
 {
     /// <summary>
     /// 战斗对象基类

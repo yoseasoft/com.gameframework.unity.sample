@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace GameSample.StateTransition
+namespace Game.Framework.Sample.StateTransition
 {
     /// <summary>
     /// 主场景数据组件类

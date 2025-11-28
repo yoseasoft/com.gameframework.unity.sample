@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace GameSample.ConfigureExpression
+namespace Game.Framework.Sample.ConfigureExpression
 {
     /// <summary>
     /// 怪物对象逻辑类

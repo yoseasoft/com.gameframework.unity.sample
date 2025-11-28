@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace GameSample.DependencyInject
+namespace Game.Framework.Sample.DependencyInject
 {
     /// <summary>
     /// 技能组件类

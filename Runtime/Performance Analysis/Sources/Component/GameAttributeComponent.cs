@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.PerformanceAnalysis
+namespace Game.Framework.Sample.PerformanceAnalysis
 {
     /// <summary>
     /// 通过框架Proto实现的属性组件类

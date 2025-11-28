@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample
+namespace Game.Framework.Sample
 {
     /// <summary>
     /// 演示案例唯一键生成器

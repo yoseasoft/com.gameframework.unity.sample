@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.TextFormat
+namespace Game.Framework.Sample.TextFormat
 {
     /// <summary>
     /// 角色对象基类

@@ -25,7 +25,7 @@
 
 using System.Linq;
 
-namespace GameSample.StateTransition
+namespace Game.Framework.Sample.StateTransition
 {
     /// <summary>
     /// 状态组件逻辑类

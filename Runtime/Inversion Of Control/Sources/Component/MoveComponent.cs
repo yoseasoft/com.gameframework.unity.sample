@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.InversionOfControl
+namespace Game.Framework.Sample.InversionOfControl
 {
     /// <summary>
     /// 移动组件类

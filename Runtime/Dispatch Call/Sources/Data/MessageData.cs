@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace GameSample.DispatchCall
+namespace Game.Framework.Sample.DispatchCall
 {
     /// <summary>
     /// 网络协议码定义

@@ -28,7 +28,7 @@ using SystemTask = System.Threading.Tasks.Task;
 using SystemTimeSpan = System.TimeSpan;
 using SystemCancellationToken = System.Threading.CancellationToken;
 
-namespace GameSample.StateTransition
+namespace Game.Framework.Sample.StateTransition
 {
     /// <summary>
     /// 延迟激活

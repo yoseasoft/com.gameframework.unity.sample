@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.InversionOfControl
+namespace Game.Framework.Sample.InversionOfControl
 {
     /// <summary>
     /// 角色对象基类

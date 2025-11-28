@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.ConfigureExpression
+namespace Game.Framework.Sample.ConfigureExpression
 {
     /// <summary>
     /// 玩家对象逻辑类

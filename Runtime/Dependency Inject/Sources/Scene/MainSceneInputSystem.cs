@@ -33,7 +33,7 @@ using SystemFileStream = System.IO.FileStream;
 using SystemMemoryStream = System.IO.MemoryStream;
 using SystemSeekOrigin = System.IO.SeekOrigin;
 
-namespace GameSample.DependencyInject
+namespace Game.Framework.Sample.DependencyInject
 {
     /// <summary>
     /// 主场景输入逻辑类

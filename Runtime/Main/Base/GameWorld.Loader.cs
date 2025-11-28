@@ -27,7 +27,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace GameSample
+namespace Game.Framework.Sample
 {
     /// <summary>
     /// 演示案例总控

@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace GameSample.TextFormat
+namespace Game.Framework.Sample.TextFormat
 {
     /// <summary>
     /// 数据构建工具类

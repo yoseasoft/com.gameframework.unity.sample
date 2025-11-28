@@ -23,7 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace GameSample.ObjectLifecycle
+namespace Game.Framework.Sample.ObjectLifecycle
 {
     /// <summary>
     /// 玩家对象基类
