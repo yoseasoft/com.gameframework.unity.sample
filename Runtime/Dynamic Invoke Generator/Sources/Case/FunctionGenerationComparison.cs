@@ -131,7 +131,7 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
                 this.speed = 5;
                 this.luckName = "雪橇小王子";
                 this.Sex = 1;
-                this.health = 150;
+                this.health = 100;
 
                 this.attack = 8;
                 this.def = 4;
@@ -151,6 +151,7 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
         public static void TestMemberFunctionBuild()
         {
             Debugger.Info("_________________________________________________");
+            System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 
             Type targetType = typeof(Hashiqi);
 
@@ -163,9 +164,34 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
             Delegate d1 = NovaEngine.Utility.Reflection.CreateGenericActionDelegate(null, m1);
             //Delegate d2 = NovaEngine.Utility.Reflection.CreateGenericActionDelegate(null, m2);
             //Delegate d3 = Delegate.Combine(d1, d2);
+
+            stopwatch.Start();
+            for (int n = 0; n < 1000000; ++n)
+                d1.DynamicInvoke(obj, obj2);
+            stopwatch.Stop();
+            Debugger.Info("hashiqi health = {%d}, alasijia health = {%d}, using time = {%d}", obj.Health, obj2.Health, stopwatch.ElapsedMilliseconds);
+
+            obj.Health = 100;
+            obj2.Health = 100;
+
+            d1 = NovaEngine.Utility.Reflection.CreateGenericActionDelegate(obj, m1);
+
+            stopwatch.Restart();
+            for (int n = 0; n < 1000000; ++n)
+                d1.DynamicInvoke(obj2);
+            stopwatch.Stop();
+            Debugger.Info("hashiqi health = {%d}, alasijia health = {%d}, using time = {%d}", obj.Health, obj2.Health, stopwatch.ElapsedMilliseconds);
+
+            obj.Health = 100;
+            obj2.Health = 100;
+
             //Delegate myDelegate = Delegate.CreateDelegate(typeof(Action<Animal>), null, m1);
 
-            d1.DynamicInvoke(obj, obj2);
+            //stopwatch.Restart();
+            //for (int n = 0; n < 1000000; ++n)
+            //    myDelegate.DynamicInvoke(obj, obj2);
+            //stopwatch.Stop();
+            //Debugger.Info("hashiqi health = {%d}, alasijia health = {%d}, using time = {%d}", obj.Health, obj2.Health, stopwatch.ElapsedMilliseconds);
         }
 
         public static void Run()

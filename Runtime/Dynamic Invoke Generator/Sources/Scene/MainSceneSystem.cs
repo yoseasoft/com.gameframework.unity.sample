@@ -48,6 +48,7 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
         [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
         static void OnSceneCaseRunningInputed(this MainScene self, int keycode, int operationType)
         {
+            FunctionGenerationComparison.TestMemberFunctionBuild();
         }
     }
 }
