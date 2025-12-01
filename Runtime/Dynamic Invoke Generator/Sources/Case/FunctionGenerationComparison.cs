@@ -173,8 +173,8 @@ namespace Game.Framework.Sample.DynamicInvokeGenerator
             stopwatch.Stop();
             Debugger.Info("hashiqi health = {%d}, alasijia health = {%d}, using time = {%d}", obj.Health, obj2.Health, stopwatch.ElapsedMilliseconds);
 
-            obj.Health = 100;
-            obj2.Health = 100;
+            //obj.Health = 100;
+            //obj2.Health = 100;
 
             //d1 = NovaEngine.Utility.Reflection.CreateGenericActionDelegate(obj, m1);
 
