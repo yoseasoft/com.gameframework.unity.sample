@@ -1,0 +1,19 @@
+{
+    "name": "Game.Sample.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Nova.Editor",
+        "Game.Sample"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
