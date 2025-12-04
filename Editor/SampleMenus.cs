@@ -33,6 +33,7 @@ namespace Game.Framework.Sample.Editor
     static class SampleMenus
     {
         const string MenuName_EnableTutorialMode = @"Nova/Tutorial/Enable Tutorial Mode";
+        const string MenuName_DisplayTutorialCases = @"Nova/Tutorial/Display Tutorial Cases";
 
         [InitializeOnLoadMethod]
         static void InitializeOnLoad()
@@ -54,6 +55,17 @@ namespace Game.Framework.Sample.Editor
             isEnabled = !isEnabled;
             TutorialConfigure.IsTutorialEnabled = isEnabled;
             Menu.SetChecked(MenuName_EnableTutorialMode, isEnabled);
+        }
+
+        [MenuItem(MenuName_DisplayTutorialCases)]
+        static void OnDisplayTutorialCases()
+        {
+            string[] sampleNames = System.Enum.GetNames(typeof(TutorialSampleType));
+            for (int n = 0; n < sampleNames.Length; ++n)
+            {
+                string path = $"{MenuName_DisplayTutorialCases}/{sampleNames[n]}";
+                MenuItem menu = new MenuItem(path);
+            }
         }
     }
 }

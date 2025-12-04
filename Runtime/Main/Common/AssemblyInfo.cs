@@ -1,5 +1,5 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
+/// CoreEngine Framework
 ///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
@@ -23,46 +23,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-using UnityEngine;
+using System.Runtime.CompilerServices;
 
-namespace Game.Framework.Sample
-{
-    /// <summary>
-    /// 教程示例的类型定义
-    /// </summary>
-    internal enum TutorialSampleType : int
-    {
-        [Header("未知")]
-        Unknown = 0,
-
-        [Header("文本格式化")]
-        TextFormat,
-
-        [Header("符号解析")]
-        SymbolParser,
-
-        [Header("构建动态调用")]
-        DynamicInvokeGenerator,
-
-        [Header("控制反转")]
-        InversionOfControl,
-
-        [Header("对象生命周期")]
-        ObjectLifecycle,
-
-        [Header("转发通知")]
-        DispatchCall,
-
-        [Header("状态转换")]
-        StateTransition,
-
-        [Header("依赖注入")]
-        DependencyInject,
-
-        [Header("配置表达式")]
-        ConfigureExpression,
-
-        [Header("性能分析")]
-        PerformanceAnalysis,
-    }
-}
+// 外部友元
+[assembly: InternalsVisibleTo("Game.Sample.Editor")]
