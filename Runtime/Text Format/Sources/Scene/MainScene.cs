@@ -29,7 +29,7 @@ namespace Game.Framework.Sample.TextFormat
     /// 主场景类
     /// </summary>
     [GameEngine.CSceneClass("Main")]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(MainDataComponent))]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(MainDataComponent))]
     internal class MainScene : GameEngine.CScene
     {
     }

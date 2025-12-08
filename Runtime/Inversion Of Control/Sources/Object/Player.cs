@@ -29,8 +29,8 @@ namespace Game.Framework.Sample.InversionOfControl
     /// 玩家对象基类
     /// </summary>
     [GameEngine.CActorClass("Player")]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(MoveComponent))]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(AttackComponent), 0, GameEngine.AspectBehaviourType.Start)]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(AttackComponent), 0, GameEngine.AspectBehaviourType.Start)]
     internal class Player : Actor
     {
         protected override void OnInitialize()

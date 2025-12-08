@@ -29,7 +29,7 @@ namespace Game.Framework.Sample.SymbolParser
     /// 战斗对象基类
     /// </summary>
     [GameEngine.CActorClass("Soldier")]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(MoveComponent))]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
     internal class Soldier : Actor, IState
     {
         public void OnState(float dt)

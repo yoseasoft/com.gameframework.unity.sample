@@ -29,7 +29,7 @@ namespace Game.Framework.Sample.SymbolParser
     /// 角色对象基类
     /// </summary>
     [GameEngine.CActorClass("Actor")]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(AttributeComponent))]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
     internal abstract class Actor : GameEngine.CActor, IBuild
     {
         public void OnBuild()

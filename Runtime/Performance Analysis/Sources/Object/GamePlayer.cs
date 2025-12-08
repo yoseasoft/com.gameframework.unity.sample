@@ -29,7 +29,7 @@ namespace Game.Framework.Sample.PerformanceAnalysis
     /// 通过框架Proto实现的玩家对象类
     /// </summary>
     [GameEngine.CActorClass("GamePlayer")]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(GameTransformComponent))]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(GameTransformComponent))]
     internal class GamePlayer : GameActor
     {
         public int player_count;

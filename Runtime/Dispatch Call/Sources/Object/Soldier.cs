@@ -29,10 +29,10 @@ namespace Game.Framework.Sample.DispatchCall
     /// 战斗对象基类
     /// </summary>
     [GameEngine.CActorClass("Soldier")]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(TransformComponent))]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(MoveComponent))]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(SkillComponent))]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(ChatComponent))]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(TransformComponent))]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(SkillComponent))]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(ChatComponent))]
     internal class Soldier : Actor
     {
     }

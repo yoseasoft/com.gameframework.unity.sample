@@ -29,7 +29,7 @@ namespace Game.Framework.Sample.DispatchCall
     /// 玩家对象基类
     /// </summary>
     [GameEngine.CActorClass("Player")]
-    [GameEngine.CEntityAutomaticActivationComponent(typeof(AttackComponent))]
+    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(AttackComponent))]
     internal class Player : Soldier
     {
     }
