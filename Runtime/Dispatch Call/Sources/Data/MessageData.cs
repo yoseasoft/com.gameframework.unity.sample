@@ -80,19 +80,19 @@ namespace Game.Framework.Sample.DispatchCall
         /// <summary>
         /// 生命
         /// </summary>
-        [ProtoBuf.ProtoMember(2)]
+        [ProtoBuf.ProtoMember(3)]
         public int Health { get; set; }
 
         /// <summary>
         /// 体力
         /// </summary>
-        [ProtoBuf.ProtoMember(3)]
+        [ProtoBuf.ProtoMember(4)]
         public int Energy { get; set; }
 
         /// <summary>
         /// 攻击
         /// </summary>
-        [ProtoBuf.ProtoMember(3)]
+        [ProtoBuf.ProtoMember(5)]
         public int Attack { get; set; }
     }
 
