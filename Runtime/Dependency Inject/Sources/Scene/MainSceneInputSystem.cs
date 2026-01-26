@@ -125,7 +125,7 @@ namespace Game.Framework.Sample.DependencyInject
             sb.Append($"类型={NovaEngine.Utility.Text.GetFullName(actor.GetType())}，");
             sb.Append($"名称={actor.BeanName}，");
 
-            IList<GameEngine.CComponent> components = actor.GetAllComponents();
+            IReadOnlyList<GameEngine.CComponent> components = actor.GetAllComponents();
             sb.Append("组件列表={");
             for (int n = 0; null != components && n < components.Count; ++n)
             {
