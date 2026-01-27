@@ -2,7 +2,7 @@
     "name": "GameEditor.Sample",
     "rootNamespace": "",
     "references": [
-        "Nova.Editor",
+        "NovaEngine.Editor",
         "GameFramework.Sample"
     ],
     "includePlatforms": [
