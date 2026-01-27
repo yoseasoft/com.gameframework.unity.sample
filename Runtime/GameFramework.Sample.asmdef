@@ -2,13 +2,13 @@
     "name": "GameFramework.Sample",
     "rootNamespace": "",
     "references": [
+        "NovaFramework.UniTask",
+        "NovaFramework.Protobuf",
+        "NovaFramework.Protobuf.Extension",
         "Nova.Library",
         "Nova.Engine",
         "Nova.Basic",
         "Nova.Import",
-        "Nova.UniTask",
-        "Nova.Protobuf",
-        "Nova.Protobuf.Extension",
         "Game.Module.Protocol.Protobuf"
     ],
     "includePlatforms": [],
