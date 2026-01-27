@@ -9,7 +9,7 @@
         "NovaEngine.Kernel",
         "NovaEngine.Basic",
         "NovaEngine.Import",
-        "Game.Module.Protocol.Protobuf"
+        "GameFramework.Protocol.Protobuf"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
