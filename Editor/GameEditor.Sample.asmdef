@@ -1,9 +1,9 @@
 {
-    "name": "Game.Sample.Editor",
+    "name": "GameEditor.Sample",
     "rootNamespace": "",
     "references": [
         "Nova.Editor",
-        "Game.Sample"
+        "GameFramework.Sample"
     ],
     "includePlatforms": [
         "Editor"

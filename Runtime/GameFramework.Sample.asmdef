@@ -1,5 +1,5 @@
 {
-    "name": "Game.Sample",
+    "name": "GameFramework.Sample",
     "rootNamespace": "",
     "references": [
         "Nova.Library",
