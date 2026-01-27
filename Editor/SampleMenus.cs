@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Editor Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -25,7 +23,7 @@
 
 using UnityEditor;
 
-namespace Game.Framework.Sample.Editor
+namespace GameFramework.Editor.Sample
 {
     /// <summary>
     /// 演示案例的菜单项
@@ -60,7 +58,7 @@ namespace Game.Framework.Sample.Editor
         [MenuItem(MenuName_DisplayTutorialCases)]
         static void OnDisplayTutorialCases()
         {
-            string[] sampleNames = System.Enum.GetNames(typeof(TutorialSampleType));
+            string[] sampleNames = System.Enum.GetNames(typeof(GameFramework.Sample.TutorialSampleType));
             for (int n = 0; n < sampleNames.Length; ++n)
             {
                 string path = $"{MenuName_DisplayTutorialCases}/{sampleNames[n]}";

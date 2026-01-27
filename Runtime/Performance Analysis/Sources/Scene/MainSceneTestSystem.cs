@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -23,13 +21,11 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-using SystemType = System.Type;
-using SystemDelegate = System.Delegate;
-using SystemStringBuilder = System.Text.StringBuilder;
-using SystemMethodInfo = System.Reflection.MethodInfo;
-using SystemBindingFlags = System.Reflection.BindingFlags;
+using System;
+using System.Diagnostics;
+using System.Reflection;
 
-namespace Game.Framework.Sample.PerformanceAnalysis
+namespace GameFramework.Sample.PerformanceAnalysis
 {
     /// <summary>
     /// 主场景逻辑类
@@ -46,16 +42,16 @@ namespace Game.Framework.Sample.PerformanceAnalysis
         [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.Alpha6, GameEngine.InputOperationType.Released)]
         static void OnSceneTestingInputed(this MainScene self, int keycode, int operationType)
         {
-            SystemType targetType = typeof(MainSceneTestSystem);
-            SystemMethodInfo methodInfo = targetType.GetMethod("AccumulateInvokeCount", SystemBindingFlags.Public | SystemBindingFlags.NonPublic | SystemBindingFlags.Static);
+            Type targetType = typeof(MainSceneTestSystem);
+            MethodInfo methodInfo = targetType.GetMethod("AccumulateInvokeCount", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
 
-            SystemDelegate callback = NovaEngine.Utility.Reflection.CreateGenericActionDelegate(null, methodInfo);
+            Delegate callback = NovaEngine.Utility.Reflection.CreateGenericActionDelegate(null, methodInfo);
 
-            System.Action<object> action = NovaEngine.Utility.Reflection.CreateGenericAction<object>(methodInfo, typeof(MainScene));
+            Action<object> action = NovaEngine.Utility.Reflection.CreateGenericAction<object>(methodInfo, typeof(MainScene));
 
             int c = 1000000;
 
-            System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+            Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             _count = 0;
             for (int n = 0; n < c; ++n)

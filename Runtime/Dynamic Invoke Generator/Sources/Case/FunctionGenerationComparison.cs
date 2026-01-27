@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -24,10 +22,10 @@
 /// -------------------------------------------------------------------------------
 
 using System;
-using System.Reflection;
 using System.Linq.Expressions;
+using System.Reflection;
 
-namespace Game.Framework.Sample.DynamicInvokeGenerator
+namespace GameFramework.Sample.DynamicInvokeGenerator
 {
     /// <summary>
     /// 函数生成方式对比测试案例

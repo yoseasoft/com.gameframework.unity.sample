@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -23,9 +21,9 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-using SystemStringBuilder = System.Text.StringBuilder;
+using System.Text;
 
-namespace Game.Framework.Sample.DispatchCall
+namespace GameFramework.Sample.DispatchCall
 {
     /// <summary>
     /// 战斗对象逻辑类
@@ -49,7 +47,7 @@ namespace Game.Framework.Sample.DispatchCall
 
         public static string ToSoldierString(this Soldier self)
         {
-            SystemStringBuilder sb = new SystemStringBuilder();
+            StringBuilder sb = new StringBuilder();
 
             IdentityComponent identityComponent = self.GetComponent<IdentityComponent>();
             sb.AppendFormat("Id={0},Type={1},名称={2},",

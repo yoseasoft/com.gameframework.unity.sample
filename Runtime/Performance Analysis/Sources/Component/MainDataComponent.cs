@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -25,7 +23,7 @@
 
 using System.Collections.Generic;
 
-namespace Game.Framework.Sample.PerformanceAnalysis
+namespace GameFramework.Sample.PerformanceAnalysis
 {
     /// <summary>
     /// 主场景数据组件类

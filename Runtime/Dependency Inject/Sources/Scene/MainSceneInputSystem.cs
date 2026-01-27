@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -24,16 +22,10 @@
 /// -------------------------------------------------------------------------------
 
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
-using SystemEncoding = System.Text.Encoding;
-using SystemStringBuilder = System.Text.StringBuilder;
-using SystemFileAccess = System.IO.FileAccess;
-using SystemFileMode = System.IO.FileMode;
-using SystemFileStream = System.IO.FileStream;
-using SystemMemoryStream = System.IO.MemoryStream;
-using SystemSeekOrigin = System.IO.SeekOrigin;
-
-namespace Game.Framework.Sample.DependencyInject
+namespace GameFramework.Sample.DependencyInject
 {
     /// <summary>
     /// 主场景输入逻辑类
@@ -49,15 +41,15 @@ namespace Game.Framework.Sample.DependencyInject
                 if (string.IsNullOrEmpty(path))
                     path = @"bean";
 
-                using (SystemFileStream fs = new SystemFileStream(
-                        $"{NovaEngine.Utility.Resource.ApplicationDataPath}/Resources/bean/{path}.xml", SystemFileMode.Open, SystemFileAccess.Read))
+                using (FileStream fs = new FileStream(
+                        $"{NovaEngine.Utility.Resource.ApplicationDataPath}/Resources/bean/{path}.xml", FileMode.Open, FileAccess.Read))
                 {
                     byte[] bytes = new byte[fs.Length];
                     fs.Read(bytes, 0, bytes.Length);
                     fs.Close();
 
                     ms.Write(bytes, 0, bytes.Length);
-                    ms.Seek(0, SystemSeekOrigin.Begin);
+                    ms.Seek(0, SeekOrigin.Begin);
 
                     bytes = null;
                 }
@@ -72,9 +64,9 @@ namespace Game.Framework.Sample.DependencyInject
             GameEngine.ApplicationContext.LoadBeanConfigure(@"main", (path, ms) =>
             {
                 string text = BeanConfig.GetConfigByName(path);
-                byte[] buffer = SystemEncoding.UTF8.GetBytes(text);
+                byte[] buffer = Encoding.UTF8.GetBytes(text);
                 ms.Write(buffer, 0, buffer.Length);
-                ms.Seek(0, SystemSeekOrigin.Begin);
+                ms.Seek(0, SeekOrigin.Begin);
 
                 return true;
             });
@@ -121,7 +113,7 @@ namespace Game.Framework.Sample.DependencyInject
 
             GameEngine.CActor actor = mainDataComponent.targetObject;
 
-            SystemStringBuilder sb = new SystemStringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append($"类型={NovaEngine.Utility.Text.GetFullName(actor.GetType())}，");
             sb.Append($"名称={actor.BeanName}，");
 

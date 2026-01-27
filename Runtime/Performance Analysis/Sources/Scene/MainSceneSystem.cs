@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -24,10 +22,10 @@
 /// -------------------------------------------------------------------------------
 
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text;
 
-using SystemStringBuilder = System.Text.StringBuilder;
-
-namespace Game.Framework.Sample.PerformanceAnalysis
+namespace GameFramework.Sample.PerformanceAnalysis
 {
     /// <summary>
     /// 主场景逻辑类
@@ -52,7 +50,7 @@ namespace Game.Framework.Sample.PerformanceAnalysis
 
             int c = 500;
 
-            System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+            Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             for (int n = 0; n < c; ++n)
             {
@@ -97,7 +95,7 @@ namespace Game.Framework.Sample.PerformanceAnalysis
 
             int c = 1000;
 
-            System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+            Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             for (int n = 0; n < mainDataComponent.game_players.Count; ++n)
             {
@@ -164,7 +162,7 @@ namespace Game.Framework.Sample.PerformanceAnalysis
                 return;
             }
 
-            System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+            Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             for (int n = 0; n < mainDataComponent.game_players.Count; ++n)
             {
@@ -197,7 +195,7 @@ namespace Game.Framework.Sample.PerformanceAnalysis
             }
 
             int c = 0;
-            System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+            Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             c = mainDataComponent.game_players.Count;
             for (int n = 0; n < c; ++n)
@@ -231,7 +229,7 @@ namespace Game.Framework.Sample.PerformanceAnalysis
 
         static void PrintGamePlayer(GamePlayer player)
         {
-            SystemStringBuilder sb = new SystemStringBuilder();
+            StringBuilder sb = new StringBuilder();
 
             GameAttributeComponent gameAttributeComponent = player.GetComponent<GameAttributeComponent>();
             GameTransformComponent gameTransformComponent = player.GetComponent<GameTransformComponent>();
@@ -247,7 +245,7 @@ namespace Game.Framework.Sample.PerformanceAnalysis
 
         static void PrintNativePlayer(NativePlayer player)
         {
-            SystemStringBuilder sb = new SystemStringBuilder();
+            StringBuilder sb = new StringBuilder();
 
             NativeAttributeComponent nativeAttributeComponent = player.attributeComponent;
             NativeTransformComponent nativeTransformComponent = player.transformComponent;

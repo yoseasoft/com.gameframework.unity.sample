@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -23,7 +21,7 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
-namespace Game.Framework.Sample
+namespace GameFramework.Sample
 {
     /// <summary>
     /// 游戏层提供的调试对象类，它是基于对<see cref="GameEngine.Debugger"/>的便捷性接口封装

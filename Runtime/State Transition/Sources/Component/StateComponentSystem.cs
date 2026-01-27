@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -25,7 +23,7 @@
 
 using System.Linq;
 
-namespace Game.Framework.Sample.StateTransition
+namespace GameFramework.Sample.StateTransition
 {
     /// <summary>
     /// 状态组件逻辑类

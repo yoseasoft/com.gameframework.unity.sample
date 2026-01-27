@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -24,10 +22,9 @@
 /// -------------------------------------------------------------------------------
 
 using System.Collections.Generic;
+using System.Text;
 
-using SystemStringBuilder = System.Text.StringBuilder;
-
-namespace Game.Framework.Sample.DispatchCall
+namespace GameFramework.Sample.DispatchCall
 {
     /// <summary>
     /// 怪物对象逻辑类
@@ -77,7 +74,7 @@ namespace Game.Framework.Sample.DispatchCall
 
         public static string ToMonsterString(this Monster self)
         {
-            SystemStringBuilder sb = new SystemStringBuilder();
+            StringBuilder sb = new StringBuilder();
 
             sb.AppendFormat("[怪物对象]:{0},", self.ToSoldierString());
 

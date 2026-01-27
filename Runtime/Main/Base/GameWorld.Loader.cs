@@ -1,6 +1,4 @@
 /// -------------------------------------------------------------------------------
-/// Sample Module for GameEngine Framework
-///
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
 /// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
@@ -27,7 +25,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Game.Framework.Sample
+namespace GameFramework.Sample
 {
     /// <summary>
     /// 演示案例总控
