@@ -40,8 +40,8 @@ namespace GameFramework.Sample
         const string ApplicationConfigureFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
                 <root>
                     <!-- 配置热加载模块 -->
-                    <hot-module name=""Game.Module.Protocol.Protobuf""/>
-                    <hot-module name=""Game.Module.View.Fairygui""/>
+                    <hot-module name=""GameFramework.Protocol.Protobuf""/>
+                    <hot-module name=""GameFramework.View.Fairygui""/>
 
                     <!-- 配置bean文件导入 -->
                     <!-- bean-import url=""bean""/ -->

@@ -31,7 +31,7 @@ namespace GameFramework.Sample
         /// <summary>
         /// 示例程序集名称
         /// </summary>
-        internal const string AssemblyName = "Game.Sample";
+        internal const string AssemblyName = "GameFramework.Sample";
 
         /// <summary>
         /// 用于检测刷新接口中的日志输出的启用状态标识
