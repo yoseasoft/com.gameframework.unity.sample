@@ -61,7 +61,7 @@ namespace GameFramework.Sample.TextFormat
             Debugger.Warn(dict_pci.GetType().FullName);
 
             Debugger.Warn("int[] data = {%s}", NovaEngine.Utility.Text.ToString(arr_int, (index, v) => { return v.ToString(); }));
-            Debugger.Warn("SoldierBlockInfo[] data = {%s}", NovaEngine.Utility.Text.ToString<SoldierBlockInfo>(arr_sbi, (index, v) => { return v.block_name; }));
+            Debugger.Warn("SoldierBlockInfo[] data = {%s}", NovaEngine.Utility.Text.ToString(arr_sbi, (index, v) => { return v.block_name; }));
             Debugger.Warn("IList<int> data = {%s}", NovaEngine.Utility.Text.ToString(list_int, (index, v) => { return v.ToString(); }));
             Debugger.Warn("Queue<int> data = {%s}", NovaEngine.Utility.Text.ToString(queue_int, (index, v) => { return v.ToString(); }));
             Debugger.Warn("Dictionary<System.Type, PlayerCardInfo> data = {%s}", NovaEngine.Utility.Text.ToString(dict_pci, (k, v) => { return v.card_name; }));
