@@ -29,18 +29,11 @@ namespace GameFramework.Editor.Sample
     static class TutorialConfigure
     {
         const string DataLabelForTutorialEnabledStatus = @"Game.Framework.Sample-TutorialEnabled";
-        const string DataLabelForTutorialSampleType = @"Game.Framework.Sample-TutorialSampleType";
 
         public static bool IsTutorialEnabled
         {
             get => NovaEngine.Editor.UserSettings.GetBool(DataLabelForTutorialEnabledStatus);
             set => NovaEngine.Editor.UserSettings.SetBool(DataLabelForTutorialEnabledStatus, value);
-        }
-
-        public static int TutorialSampleType
-        {
-            get => NovaEngine.Editor.UserSettings.GetInt(DataLabelForTutorialSampleType);
-            set => NovaEngine.Editor.UserSettings.SetInt(DataLabelForTutorialSampleType, value);
         }
     }
 }

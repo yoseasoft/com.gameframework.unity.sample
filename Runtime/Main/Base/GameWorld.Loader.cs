@@ -27,10 +27,8 @@ using System.Text;
 
 namespace GameFramework.Sample
 {
-    /// <summary>
     /// 演示案例总控
-    /// </summary>
-    internal static partial class GameWorld
+    static partial class GameWorld
     {
         static IDictionary<string, string> _dataConfigures = new Dictionary<string, string>()
         {

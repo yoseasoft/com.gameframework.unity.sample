@@ -2,6 +2,8 @@
     "name": "GameEditor.Sample",
     "rootNamespace": "",
     "references": [
+        "NovaFramework.Common",
+        "NovaEditor.Common",
         "NovaEngine.Editor",
         "GameFramework.Sample"
     ],

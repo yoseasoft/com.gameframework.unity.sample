@@ -28,7 +28,7 @@ namespace GameFramework.Sample.TextFormat
     /// <summary>
     /// 数据构建工具类
     /// </summary>
-    internal static class DataBuilder
+    static class DataBuilder
     {
         public static Player CreatePlayer()
         {

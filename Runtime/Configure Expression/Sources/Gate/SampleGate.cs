@@ -26,7 +26,7 @@ namespace GameFramework.Sample.ConfigureExpression
     /// <summary>
     /// 案例入口类
     /// </summary>
-    internal static class SampleGate
+    static class SampleGate
     {
         public static void Run()
         {

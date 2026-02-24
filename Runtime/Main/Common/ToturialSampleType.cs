@@ -28,7 +28,7 @@ namespace GameFramework.Sample
     /// <summary>
     /// 教程示例的类型定义
     /// </summary>
-    internal enum TutorialSampleType : int
+    enum TutorialSampleType : int
     {
         [Header("未知")]
         Unknown = 0,
@@ -56,6 +56,9 @@ namespace GameFramework.Sample
 
         [Header("依赖注入")]
         DependencyInject,
+
+        [Header("数据同步")]
+        DataSynchronization,
 
         [Header("配置表达式")]
         ConfigureExpression,

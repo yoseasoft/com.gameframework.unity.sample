@@ -28,7 +28,7 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// Bean配置数据管理类
     /// </summary>
-    internal static class BeanConfig
+    static class BeanConfig
     {
         static IDictionary<string, string> _dataConfigures = new Dictionary<string, string>()
         {

@@ -26,33 +26,33 @@ namespace GameFramework.Sample
     /// <summary>
     /// 演示案例过滤接口定义
     /// </summary>
-    internal static class SampleFiltingProcessor
+    static class SampleFilteringProcessor
     {
         /// <summary>
         /// 是否忽略Game模块下的所有内容，演示案例目录下的不计入忽略清单
         /// </summary>
         private readonly static bool IgnoreExternalGameModuleEnabled = true;
 
-        private readonly static string SampleModuleName = typeof(SampleFiltingProcessor).Namespace;
+        private readonly static string SampleModuleName = typeof(SampleFilteringProcessor).Namespace;
         private static string FilterModuleName = null;
 
-        internal static void AddSampleFilter(string type)
+        public static void AddSampleFilter(string type)
         {
             Debugger.Assert(string.IsNullOrEmpty(FilterModuleName));
 
             FilterModuleName = $"{SampleModuleName}.{type}";
 
-            GameEngine.Loader.CodeLoader.AddAssemblyLoadFiltingProcessorCallback(AssemblyLoadFiltingProcessor);
+            GameEngine.Loader.CodeLoader.AddAssemblyLoadFiltingProcessorCallback(AssemblyLoadFilteringProcessor);
         }
 
-        internal static void RemoveSampleFilter()
+        public static void RemoveSampleFilter()
         {
-            GameEngine.Loader.CodeLoader.RemoveAssemblyLoadFiltingProcessorCallback(AssemblyLoadFiltingProcessor);
+            GameEngine.Loader.CodeLoader.RemoveAssemblyLoadFiltingProcessorCallback(AssemblyLoadFilteringProcessor);
 
             FilterModuleName = null;
         }
 
-        internal static string GetFilterModuleName()
+        public static string GetFilterModuleName()
         {
             return FilterModuleName;
         }
@@ -64,7 +64,7 @@ namespace GameFramework.Sample
         /// <param name="assemblyName">程序集名称</param>
         /// <param name="classType">当前解析类</param>
         /// <returns>若目标类需要加载则返回true，否则返回false</returns>
-        public static bool AssemblyLoadFiltingProcessor(string assemblyName, System.Type classType)
+        static bool AssemblyLoadFilteringProcessor(string assemblyName, System.Type classType)
         {
             string ns = classType.Namespace;
 

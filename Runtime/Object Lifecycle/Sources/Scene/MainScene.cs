@@ -67,12 +67,12 @@ namespace GameFramework.Sample.ObjectLifecycle
 
         protected override void OnUpdate()
         {
-            if (GameWorld.OnceTimeUpdateCallPassed(this)) Debugger.Info("Call Main.OnUpdate Method.");
+            Debugger.LoopInfo(this, "Call Main.OnUpdate Method.");
         }
 
         protected override void OnLateUpdate()
         {
-            if (GameWorld.OnceTimeUpdateCallPassed(this)) Debugger.Info("Call Main.OnLateUpdate Method.");
+            Debugger.LoopInfo(this, "Call Main.OnLateUpdate Method.");
         }
     }
 }

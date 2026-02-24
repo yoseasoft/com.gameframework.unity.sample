@@ -26,7 +26,7 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 事件通知类
     /// </summary>
-    internal static class EventNotify
+    static class EventNotify
     {
         public const int DisplayAttribute = 101;
         public const int PlayerDisplayInfo = 1101;

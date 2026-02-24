@@ -28,7 +28,7 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 网络协议码定义
     /// </summary>
-    internal static class ProtoOpcode
+    static class ProtoOpcode
     {
         public const ushort EnterWorldResp = 101;
         public const ushort LeaveWorldResp = 102;

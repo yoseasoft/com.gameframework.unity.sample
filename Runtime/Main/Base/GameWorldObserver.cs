@@ -26,7 +26,7 @@ namespace GameFramework.Sample
     /// <summary>
     /// 演示案例全局观察器类
     /// </summary>
-    internal static class GameHubObserver
+    static class GameHubObserver
     {
         public static void Startup()
         {

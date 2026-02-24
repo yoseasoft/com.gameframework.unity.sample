@@ -1,6 +1,6 @@
 /// -------------------------------------------------------------------------------
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
-/// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
+/// Copyright (C) 2025 - 2026, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,8 +30,8 @@ namespace GameFramework.Editor.Sample
     /// </summary>
     static class SampleMenus
     {
-        const string MenuName_EnableTutorialMode = @"Nova/Tutorial/Enable Tutorial Mode";
-        const string MenuName_DisplayTutorialCases = @"Nova/Tutorial/Display Tutorial Cases";
+        const string MenuName_TutorialEnabled = @"Game Framework/Tutorial/Tutorial Enable";
+        const string MenuName_TutorialInstalled = @"Game Framework/Tutorial/Tutorial Install";
 
         [InitializeOnLoadMethod]
         static void InitializeOnLoad()
@@ -43,27 +43,23 @@ namespace GameFramework.Editor.Sample
         static void InitMenuState()
         {
             bool isTutorialEnabled = TutorialConfigure.IsTutorialEnabled;
-            Menu.SetChecked(MenuName_EnableTutorialMode, isTutorialEnabled);
+            Menu.SetChecked(MenuName_TutorialEnabled, isTutorialEnabled);
         }
 
-        [MenuItem(MenuName_EnableTutorialMode)]
+        [MenuItem(MenuName_TutorialEnabled)]
         static void OnTutorialEnabled()
         {
             bool isEnabled = TutorialConfigure.IsTutorialEnabled;
             isEnabled = !isEnabled;
             TutorialConfigure.IsTutorialEnabled = isEnabled;
-            Menu.SetChecked(MenuName_EnableTutorialMode, isEnabled);
+            Menu.SetChecked(MenuName_TutorialEnabled, isEnabled);
         }
 
-        [MenuItem(MenuName_DisplayTutorialCases)]
-        static void OnDisplayTutorialCases()
+        [MenuItem(MenuName_TutorialInstalled)]
+        static void OnTutorialInstalled()
         {
-            string[] sampleNames = System.Enum.GetNames(typeof(GameFramework.Sample.TutorialSampleType));
-            for (int n = 0; n < sampleNames.Length; ++n)
-            {
-                string path = $"{MenuName_DisplayTutorialCases}/{sampleNames[n]}";
-                MenuItem menu = new MenuItem(path);
-            }
+            SettingsExportStep step = new SettingsExportStep();
+            step.Install();
         }
     }
 }

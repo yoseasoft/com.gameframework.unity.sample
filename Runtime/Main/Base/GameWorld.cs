@@ -26,11 +26,26 @@ namespace GameFramework.Sample
     /// <summary>
     /// 演示案例总控
     /// </summary>
-    internal static partial class GameWorld
+    static partial class GameWorld
     {
-        public static void Run(string tutorialType)
+        /// <summary>
+        /// 运行状态标识
+        /// </summary>
+        private static bool _isRunning = false;
+
+        public static void Run()
         {
-            SampleFiltingProcessor.AddSampleFilter(tutorialType);
+            TutorialSettings settings = TutorialSettings.Instance;
+            if (TutorialSampleType.Unknown == settings.TutorialSampleType)
+            {
+                Debugger.Error("The current running tutorial sample type '{%i}' was invalid value, please selected correct sample type from 'TutorialSettings' assets file.", settings.TutorialSampleType);
+                return;
+            }
+
+            string tutorialType = settings.TutorialSampleType.ToString();
+            Debugger.Log("当前正在运行教程：{%s}", tutorialType);
+
+            SampleFilteringProcessor.AddSampleFilter(tutorialType);
 
             // 加载应用上下文
             LoadApplicationContexts();
@@ -47,10 +62,18 @@ namespace GameFramework.Sample
             GameEngine.GameLibrary.OnApplicationStartup(OnApplicationResponseCallback);
 
             CallSampleGate(GameEngine.GameMacros.GAME_REMOTE_PROCESS_CALL_RUN_SERVICE_NAME);
+
+            _isRunning = true;
         }
 
         public static void Stop()
         {
+            if (!_isRunning)
+            {
+                Debugger.Error("The sample module was not running, stopped it failed.");
+                return;
+            }
+
             CallSampleGate(GameEngine.GameMacros.GAME_REMOTE_PROCESS_CALL_STOP_SERVICE_NAME);
 
             // 关闭应用通知回调接口
@@ -59,7 +82,9 @@ namespace GameFramework.Sample
             // 自动注销所有热加载模块
             GameEngine.GameApi.AutoUnregisterAllHotModulesOfContextConfigure();
 
-            SampleFiltingProcessor.RemoveSampleFilter();
+            SampleFilteringProcessor.RemoveSampleFilter();
+
+            _isRunning = false;
         }
 
         /// <summary>
@@ -68,6 +93,12 @@ namespace GameFramework.Sample
         /// <param name="commandType">类型标识</param>
         public static void Reload(GameEngine.EngineCommandType commandType)
         {
+            if (!_isRunning)
+            {
+                Debugger.Error("The sample module was not running, reloaded it failed.");
+                return;
+            }
+
             switch (commandType)
             {
                 case GameEngine.EngineCommandType.Hotfix:
@@ -86,7 +117,7 @@ namespace GameFramework.Sample
         /// <param name="methodName">函数名称</param>
         private static void CallSampleGate(string methodName)
         {
-            string targetName = SampleFiltingProcessor.GetFilterModuleName() + ".SampleGate";
+            string targetName = SampleFilteringProcessor.GetFilterModuleName() + ".SampleGate";
 
             System.Type type = NovaEngine.Utility.Assembly.GetType(targetName);
             if (type == null)

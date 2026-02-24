@@ -30,7 +30,7 @@ namespace GameFramework.Sample.DynamicInvokeGenerator
     /// <summary>
     /// 函数生成方式对比测试案例
     /// </summary>
-    internal static class FunctionGenerationComparison
+    static class FunctionGenerationComparison
     {
         public abstract class Animal
         {
@@ -270,7 +270,7 @@ namespace GameFramework.Sample.DynamicInvokeGenerator
         }
     }
 
-    internal static class HashiqiExtension
+    static class HashiqiExtension
     {
         public static void SayHello(this FunctionGenerationComparison.Hashiqi self, FunctionGenerationComparison.Animal target)
         {

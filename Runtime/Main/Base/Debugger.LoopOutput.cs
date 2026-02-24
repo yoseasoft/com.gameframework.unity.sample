@@ -1,6 +1,6 @@
 /// -------------------------------------------------------------------------------
 /// Copyright (C) 2024 - 2025, Hurley, Independent Studio.
-/// Copyright (C) 2025, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
+/// Copyright (C) 2025 - 2026, Hainan Yuanyou Information Technology Co., Ltd. Guangzhou Branch
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -21,23 +21,55 @@
 /// THE SOFTWARE.
 /// -------------------------------------------------------------------------------
 
+using System.Collections;
 using System.Collections.Generic;
 
 namespace GameFramework.Sample
 {
-    /// <summary>
-    /// 演示案例总控
-    /// </summary>
-    internal static partial class GameWorld
+    /// 游戏层提供的调试对象类
+    static partial class Debugger
     {
-        private static IDictionary<int, int> GameEntityUpdateCallStat = null;
+        /// <summary>
+        /// 基于常规模式下的日志输出接口
+        /// </summary>
+        /// <param name="obj">对象实例</param>
+        /// <param name="message">日志内容</param>
+        public static void LoopInfo(object obj, object message)
+        {
+            if (IsLoopCallPassedWithOnceTime(obj)) Info(message);
+        }
+
+        /// <summary>
+        /// 基于常规模式下的日志输出接口
+        /// </summary>
+        /// <param name="obj">对象实例</param>
+        /// <param name="message">日志内容</param>
+        public static void LoopInfo(object obj, string message)
+        {
+            if (IsLoopCallPassedWithOnceTime(obj)) Info(message);
+        }
+
+        /// <summary>
+        /// 基于常规模式下的日志输出接口
+        /// </summary>
+        /// <param name="obj">对象实例</param>
+        /// <param name="format">日志格式内容</param>
+        /// <param name="args">日志格式化参数</param>
+        public static void LoopInfo(object obj, string format, params object[] args)
+        {
+            if (IsLoopCallPassedWithOnceTime(obj)) Info(format, args);
+        }
+
+        #region 检测循环调用是否已触发的接口函数
+
+        private static IDictionary<int, int> GameEntityUpdateCallStat;
 
         /// <summary>
         /// 一次性更新调度逻辑控制可行状态检测
         /// </summary>
         /// <param name="obj">对象实例</param>
-        /// <returns>满足一次性刷新调度条件</returns>
-        internal static bool OnceTimeUpdateCallPassed(object obj)
+        /// <returns>若满足一次性刷新调度条件则返回true，否则返回false</returns>
+        private static bool IsLoopCallPassedWithOnceTime(object obj)
         {
             if (!GlobalMacros.LoopOutputEnabled)
             {
@@ -66,19 +98,6 @@ namespace GameFramework.Sample
             return false;
         }
 
-        /// <summary>
-        /// 每一帧更新调度逻辑控制可行状态检测
-        /// </summary>
-        /// <param name="obj">对象实例</param>
-        /// <returns>满足每一帧刷新调度条件</returns>
-        internal static bool EachFrameUpdateCallPassed(object obj)
-        {
-            if (!GlobalMacros.LoopOutputEnabled)
-            {
-                return false;
-            }
-
-            return false;
-        }
+        #endregion
     }
 }

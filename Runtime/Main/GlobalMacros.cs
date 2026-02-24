@@ -26,7 +26,7 @@ namespace GameFramework.Sample
     /// <summary>
     /// 演示案例全局宏定义
     /// </summary>
-    internal static class GlobalMacros
+    static class GlobalMacros
     {
         /// <summary>
         /// 示例程序集名称
