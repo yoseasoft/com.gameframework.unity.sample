@@ -5,6 +5,7 @@
         "NovaFramework.Common",
         "NovaEditor.Common",
         "NovaEngine.Editor",
+        "GameFramework.Common",
         "GameFramework.Sample"
     ],
     "includePlatforms": [

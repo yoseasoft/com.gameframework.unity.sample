@@ -10,6 +10,7 @@
         "NovaEngine.Kernel",
         "NovaEngine.Basic",
         "NovaEngine.Import",
+        "GameFramework.Common",
         "GameFramework.Protocol.Protobuf"
     ],
     "includePlatforms": [],
