@@ -30,18 +30,18 @@ namespace GameFramework.Sample.DispatchCall
     /// </summary>
     static class ChatComponentSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this ChatComponent self)
         {
             self.messages = new List<string>();
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this ChatComponent self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        [OnUpdate]
         static void Update(this ChatComponent self)
         {
             if (null != self.messages && self.messages.Count > 0)
@@ -59,15 +59,15 @@ namespace GameFramework.Sample.DispatchCall
             }
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this ChatComponent self)
         {
             self.messages.Clear();
             self.messages = null;
         }
 
-        // [GameEngine.MessageListenerBindingOfTarget(typeof(ActorChatResp))]
-        [GameEngine.MessageListenerBindingOfTarget(ProtoOpcode.ActorChatResp)]
+        // [OnBeanMessage(typeof(ActorChatResp))]
+        [OnBeanMessage(ProtoOpcode.ActorChatResp)]
         static void OnChatResp(this ChatComponent self, ProtoBuf.Extension.IMessage msg) // ActorChatResp message)
         {
             ActorChatResp message = msg as ActorChatResp;

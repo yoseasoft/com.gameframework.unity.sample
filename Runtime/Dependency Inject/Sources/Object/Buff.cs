@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// Buff对象基类
     /// </summary>
-    [GameEngine.CObjectClass("Buff")]
-    internal class Buff : GameEngine.CObject
+    [GObjectClass("Buff")]
+    internal class Buff : GObject
     {
     }
 }

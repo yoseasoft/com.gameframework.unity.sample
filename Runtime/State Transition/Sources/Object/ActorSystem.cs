@@ -28,17 +28,17 @@ namespace GameFramework.Sample.StateTransition
     /// </summary>
     static class ActorSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this Actor self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this Actor self)
         {
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this Actor self)
         {
         }

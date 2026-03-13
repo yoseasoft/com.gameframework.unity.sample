@@ -26,7 +26,7 @@ namespace GameFramework.Sample.ConfigureExpression
     /// <summary>
     /// 玩家对象基类
     /// </summary>
-    [GameEngine.CActorClass("Player")]
+    [GActorClass("Player")]
     internal class Player : Soldier
     {
     }

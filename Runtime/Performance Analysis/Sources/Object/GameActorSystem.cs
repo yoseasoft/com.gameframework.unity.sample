@@ -28,55 +28,55 @@ namespace GameFramework.Sample.PerformanceAnalysis
     /// </summary>
     static class GameActorSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Initialize)]
+        [OnInitialize]
         static void Initialize(this GameActor self)
         {
             GameActor.actor_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Startup)]
+        [OnStartup]
         static void Startup(this GameActor self)
         {
             GameActor.actor_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this GameActor self)
         {
             GameActor.actor_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this GameActor self)
         {
             GameActor.actor_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this GameActor self)
         {
             GameActor.actor_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Shutdown)]
+        [OnShutdown]
         static void Shutdown(this GameActor self)
         {
             GameActor.actor_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Cleanup)]
+        [OnCleanup]
         static void Cleanup(this GameActor self)
         {
             GameActor.actor_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        [OnUpdate]
         static void Update(this GameActor self)
         {
             self.actor_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.LateUpdate)]
+        [OnLateUpdate]
         static void LateUpdate(this GameActor self)
         {
             self.actor_count++;

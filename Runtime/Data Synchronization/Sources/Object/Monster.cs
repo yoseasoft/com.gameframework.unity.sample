@@ -28,8 +28,8 @@ namespace GameFramework.Sample.DataSynchronization
     /// <summary>
     /// 怪物对象基类
     /// </summary>
-    [GameEngine.CActorClass("Monster")]
-    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(SpawnComponent))]
+    [GActorClass("Monster")]
+    [GComponentAutomaticActivationOfEntity(typeof(SpawnComponent))]
     abstract class Monster : Soldier
     {
         public override string ToString()

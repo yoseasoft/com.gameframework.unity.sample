@@ -26,7 +26,7 @@ namespace GameFramework.Sample.ConfigureExpression
     /// <summary>
     /// 怪物对象基类
     /// </summary>
-    [GameEngine.CActorClass("Monster")]
+    [GActorClass("Monster")]
     internal class Monster : Soldier
     {
     }

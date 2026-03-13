@@ -26,8 +26,8 @@ namespace GameFramework.Sample.InversionOfControl
     /// <summary>
     /// 属性组件类
     /// </summary>
-    [GameEngine.CComponentClass("AttributeComponent")]
-    internal class AttributeComponent : GameEngine.CComponent
+    [GComponentClass("AttributeComponent")]
+    internal class AttributeComponent : GComponent
     {
         public AttributeComponent()
         {

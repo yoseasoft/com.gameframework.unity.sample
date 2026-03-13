@@ -28,7 +28,7 @@ namespace GameFramework.Sample.ObjectLifecycle
     /// </summary>
     static class MainSceneInputSystem
     {
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
+        [OnGlobalInput((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
         static void OnSceneInputed(int keycode, int operationType)
         {
             MainScene main = GameEngine.SceneHandler.Instance.GetCurrentScene() as MainScene;

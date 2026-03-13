@@ -28,17 +28,17 @@ namespace GameFramework.Sample.ConfigureExpression
     /// </summary>
     static class PlayerSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this Player self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this Player self)
         {
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this Player self)
         {
         }

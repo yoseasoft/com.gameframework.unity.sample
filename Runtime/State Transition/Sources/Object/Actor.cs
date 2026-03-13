@@ -26,9 +26,9 @@ namespace GameFramework.Sample.StateTransition
     /// <summary>
     /// 角色对象基类
     /// </summary>
-    [GameEngine.CActorClass("Actor")]
-    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
-    internal abstract class Actor : GameEngine.CActor
+    [GActorClass("Actor")]
+    [GComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
+    internal abstract class Actor : GActor
     {
     }
 }

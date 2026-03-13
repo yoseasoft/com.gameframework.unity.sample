@@ -28,28 +28,28 @@ namespace GameFramework.Sample.DataSynchronization
     /// </summary>
     static class MainSceneSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void BeforeAwake(this MainScene self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void BeforeStart(this MainScene self)
         {
             self.PrintUsage();
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        [OnUpdate]
         static void BeforeUpdate(this MainScene self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.LateUpdate)]
+        [OnLateUpdate]
         static void BeforeLateUpdate(this MainScene self)
         {
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void AfterDestroy(this MainScene self)
         {
         }

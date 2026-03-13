@@ -28,17 +28,17 @@ namespace GameFramework.Sample.DispatchCall
     /// </summary>
     static class SkillComponentSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this SkillComponent self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this SkillComponent self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        [OnUpdate]
         static void Update(this SkillComponent self)
         {
             for (int n = 0; null != self.skills && n < self.skills.Count; ++n)
@@ -55,7 +55,7 @@ namespace GameFramework.Sample.DispatchCall
             }
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this SkillComponent self)
         {
         }

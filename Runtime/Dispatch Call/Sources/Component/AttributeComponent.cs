@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 属性组件类
     /// </summary>
-    [GameEngine.CComponentClass("AttributeComponent")]
-    internal class AttributeComponent : GameEngine.CComponent
+    [GComponentClass("AttributeComponent")]
+    internal class AttributeComponent : GComponent
     {
         public int level;
 
@@ -39,13 +39,13 @@ namespace GameFramework.Sample.DispatchCall
 
         public int attack;
 
-        [GameEngine.EventSubscribeBindingOfTarget(EventNotify.DisplayAttribute)]
+        [OnBeanEvent(EventNotify.DisplayAttribute)]
         public void OnDisplayInfo(int eventID, params object[] args)
         {
             Debugger.Info("基于带参普通成员函数‘OnDisplayInfo’调用, 打印信息：{%s}", ToString());
         }
 
-        [GameEngine.EventSubscribeBindingOfTarget(EventNotify.DisplayAttribute)]
+        [OnBeanEvent(EventNotify.DisplayAttribute)]
         public void OnDisplayInfoWithNullParameter()
         {
             Debugger.Info("基于无参普通成员函数‘OnDisplayInfoWithNullParameter’调用, 打印信息：{%s}", ToString());

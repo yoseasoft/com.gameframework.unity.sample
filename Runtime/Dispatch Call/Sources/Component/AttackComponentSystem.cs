@@ -28,7 +28,7 @@ namespace GameFramework.Sample.DispatchCall
     /// </summary>
     static class AttackComponentSystem
     {
-        [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.K, GameEngine.InputOperationType.Released)]
+        [OnBeanInput((int) UnityEngine.KeyCode.K, GameEngine.InputOperationType.Released)]
         private static void OnAttackInputObserve(this AttackComponent self, int keycode, int operationType)
         {
             Debugger.Warn("OnAttackInputObserve: {%s} - {%d}.", self.GetComponent<IdentityComponent>().objectName, keycode);

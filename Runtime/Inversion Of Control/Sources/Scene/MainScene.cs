@@ -26,9 +26,9 @@ namespace GameFramework.Sample.InversionOfControl
     /// <summary>
     /// 主场景类
     /// </summary>
-    [GameEngine.CSceneClass("Main")]
-    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(MainMapComponent))]
-    internal class MainScene : GameEngine.CScene
+    [GSceneClass("Main")]
+    [GComponentAutomaticActivationOfEntity(typeof(MainMapComponent))]
+    internal class MainScene : GScene
     {
         protected override void OnInitialize()
         {

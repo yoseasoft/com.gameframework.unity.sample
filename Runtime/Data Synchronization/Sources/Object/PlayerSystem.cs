@@ -28,40 +28,40 @@ namespace GameFramework.Sample.DataSynchronization
     /// </summary>
     static class PlayerSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this Player self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this Player self)
         {
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this Player self)
         {
         }
 
-        [GameEngine.OnReplicateDispatchCall("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
+        [OnGlobalReplicate("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
         static void OnPlayerChangedNotify(string tags, GameEngine.ReplicateAnnounceType announceType)
         {
             Debugger.Info("??????????????????");
         }
 
-        [GameEngine.OnReplicateDispatchCall("player.skill", GameEngine.ReplicateAnnounceType.Changed)]
+        [OnGlobalReplicate("player.skill", GameEngine.ReplicateAnnounceType.Changed)]
         static void OnPlayerSkillChangedNotify(string tags, GameEngine.ReplicateAnnounceType announceType)
         {
             Debugger.Info("!!!!!!!!!!!!!!!!!!!!");
         }
 
-        [GameEngine.OnReplicateDispatchCall(typeof(Player), "player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
+        [OnGlobalReplicate(typeof(Player), "player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
         static void OnPlayerChangedEachEveryoneNotify(Player player, string tags, GameEngine.ReplicateAnnounceType announceType)
         {
             Debugger.Info("?????????????????? player = {%s}", player.ToString());
         }
 
-        [GameEngine.ReplicateCommunicateBindingOfTarget("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
+        [OnBeanReplicate("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
         static void OnPlayerItemChangedBySelfNotify(this Player self, string tags, GameEngine.ReplicateAnnounceType announceType)
         {
             Debugger.Info("~~~~~~~~~~~~~~~~~~ player = {%s}", self.ToString());

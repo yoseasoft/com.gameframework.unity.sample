@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// 弓箭哥布林的AI组件类
     /// </summary>
-    [GameEngine.CComponentClass("GoblinAiWithBowComponent")]
-    internal class GoblinAiWithBowComponent : GameEngine.CComponent
+    [GComponentClass("GoblinAiWithBowComponent")]
+    internal class GoblinAiWithBowComponent : GComponent
     {
     }
 }

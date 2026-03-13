@@ -30,19 +30,19 @@ namespace GameFramework.Sample.DataSynchronization
     /// </summary>
     static class MainDataComponentSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this MainDataComponent self)
         {
             self.players = new List<Player>();
             self.monsters = new List<Monster>();
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this MainDataComponent self)
         {
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this MainDataComponent self)
         {
             for (int n = 0; n < self.players.Count; ++n)

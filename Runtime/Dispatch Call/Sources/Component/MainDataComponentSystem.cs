@@ -28,17 +28,17 @@ namespace GameFramework.Sample.DispatchCall
     /// </summary>
     static class MainDataComponentSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this MainDataComponent self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this MainDataComponent self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        [OnUpdate]
         static void Update(this MainDataComponent self)
         {
             for (int n = 0; null != self.monsters && n < self.monsters.Count; ++n)
@@ -55,7 +55,7 @@ namespace GameFramework.Sample.DispatchCall
             }
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this MainDataComponent self)
         {
         }

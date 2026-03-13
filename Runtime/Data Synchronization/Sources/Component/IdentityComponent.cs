@@ -29,8 +29,8 @@ namespace GameFramework.Sample.DataSynchronization
     /// <summary>
     /// 身份组件类
     /// </summary>
-    [GameEngine.CComponentClass("IdentityComponent")]
-    internal class IdentityComponent : GameEngine.CComponent
+    [GComponentClass("IdentityComponent")]
+    internal class IdentityComponent : GComponent
     {
         [GameEngine.OnReplicateField("object_type")]
         public int objectType;

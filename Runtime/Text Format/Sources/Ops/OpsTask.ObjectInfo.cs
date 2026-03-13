@@ -28,7 +28,7 @@ namespace GameFramework.Sample.TextFormat
     /// </summary>
     static partial class OpsTask
     {
-        [GameEngine.OnInputDispatchCall(TaskCode_ObjectInfo, GameEngine.InputOperationType.Released)]
+        [OnGlobalInput(TaskCode_ObjectInfo, GameEngine.InputOperationType.Released)]
         static void TestObjectInfo(int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentScene().GetComponent<MainDataComponent>();

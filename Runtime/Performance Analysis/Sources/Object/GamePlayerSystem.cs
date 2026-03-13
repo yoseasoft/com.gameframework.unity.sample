@@ -28,55 +28,55 @@ namespace GameFramework.Sample.PerformanceAnalysis
     /// </summary>
     static class GamePlayerSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Initialize)]
+        [OnInitialize]
         static void Initialize(this GamePlayer self)
         {
             GamePlayer.player_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Startup)]
+        [OnStartup]
         static void Startup(this GamePlayer self)
         {
             GamePlayer.player_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this GamePlayer self)
         {
             GamePlayer.player_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this GamePlayer self)
         {
             GamePlayer.player_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this GamePlayer self)
         {
             GamePlayer.player_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Shutdown)]
+        [OnShutdown]
         static void Shutdown(this GamePlayer self)
         {
             GamePlayer.player_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Cleanup)]
+        [OnCleanup]
         static void Cleanup(this GamePlayer self)
         {
             GamePlayer.player_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        [OnUpdate]
         static void Update(this GamePlayer self)
         {
             self.player_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.LateUpdate)]
+        [OnLateUpdate]
         static void LateUpdate(this GamePlayer self)
         {
             self.player_count++;

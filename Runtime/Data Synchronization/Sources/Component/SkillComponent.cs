@@ -23,15 +23,14 @@
 
 using System.Collections.Generic;
 using System.Text;
-using static GameFramework.Sample.DispatchCall.SkillComponent;
 
 namespace GameFramework.Sample.DataSynchronization
 {
     /// <summary>
     /// 技能组件类
     /// </summary>
-    [GameEngine.CComponentClass("SkillComponent")]
-    internal class SkillComponent : GameEngine.CComponent
+    [GComponentClass("SkillComponent")]
+    internal class SkillComponent : GComponent
     {
         public class SkillInfo
         {
@@ -60,7 +59,7 @@ namespace GameFramework.Sample.DataSynchronization
             sb.Append(@"技能={");
             for (int n = 0; null != this.skills && n < this.skills.Count; ++n)
             {
-                SkillComponent.SkillInfo skill = this.skills[n];
+                SkillInfo skill = this.skills[n];
 
                 if (n > 0) sb.Append(",");
                 sb.Append(skill.ToString());

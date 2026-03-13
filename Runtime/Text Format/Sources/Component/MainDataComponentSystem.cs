@@ -28,7 +28,7 @@ namespace GameFramework.Sample.TextFormat
     /// </summary>
     static class MainDataComponentSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this MainDataComponent self)
         {
             self.player = DataBuilder.CreatePlayer();
@@ -36,12 +36,12 @@ namespace GameFramework.Sample.TextFormat
             Debugger.Info("成功创建玩家对象实例！");
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this MainDataComponent self)
         {
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this MainDataComponent self)
         {
             GameEngine.GameApi.DestroyActor(self.player);

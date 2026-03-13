@@ -30,7 +30,7 @@ namespace GameFramework.Sample.StateTransition
     /// </summary>
     static class StateComponentSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this StateComponent self)
         {
             Player player = self.Entity as Player;
@@ -44,12 +44,12 @@ namespace GameFramework.Sample.StateTransition
             self.machine.Start();
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this StateComponent self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        [OnUpdate]
         static void Update(this StateComponent self)
         {
             self.machine.Tick();
@@ -62,7 +62,7 @@ namespace GameFramework.Sample.StateTransition
             }
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this StateComponent self)
         {
             self.machine.Stop();

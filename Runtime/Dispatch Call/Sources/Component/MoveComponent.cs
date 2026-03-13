@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 移动组件类
     /// </summary>
-    [GameEngine.CComponentClass("MoveComponent")]
-    internal class MoveComponent : GameEngine.CComponent
+    [GComponentClass("MoveComponent")]
+    internal class MoveComponent : GComponent
     {
         public int escape_time;
 

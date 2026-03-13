@@ -32,7 +32,7 @@ namespace GameFramework.Sample.DependencyInject
     /// </summary>
     static class MainSceneInputSystem
     {
-        [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        [OnBeanInput((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
         static void OnConfigureFileLoadNotify(this MainScene self, int keycode, int operationType)
         {
             /*
@@ -75,7 +75,7 @@ namespace GameFramework.Sample.DependencyInject
             GameEngine.ApplicationContext.RebindingBeanConfigureOfSymbols();
         }
 
-        [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        [OnBeanInput((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
         static void OnBeanObjectGenerateNotify(this MainScene self, int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -97,11 +97,11 @@ namespace GameFramework.Sample.DependencyInject
             int r = NovaEngine.Utility.Random.Next(beanNames.Count);
             string beanName = beanNames[r];
 
-            mainDataComponent.targetObject = GameEngine.ApplicationContext.CreateBean(beanName) as GameEngine.CActor;
+            mainDataComponent.targetObject = GameEngine.ApplicationContext.CreateBean(beanName) as GActor;
             Debugger.Info($"成功创建名为{beanName}的Bean对象实例！");
         }
 
-        [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
+        [OnBeanInput((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
         static void OnBeanObjectPrintNotify(this MainScene self, int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -111,7 +111,7 @@ namespace GameFramework.Sample.DependencyInject
                 return;
             }
 
-            GameEngine.CActor actor = mainDataComponent.targetObject;
+            GActor actor = mainDataComponent.targetObject;
 
             StringBuilder sb = new StringBuilder();
             sb.Append($"类型={NovaEngine.Utility.Text.GetFullName(actor.GetType())}，");

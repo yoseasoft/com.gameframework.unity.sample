@@ -30,7 +30,7 @@ namespace GameFramework.Sample.ConfigureExpression
     /// </summary>
     static class MainDataComponentSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this MainDataComponent self)
         {
             Player player = GameEngine.GameApi.CreateActor<Player>();
@@ -66,12 +66,12 @@ namespace GameFramework.Sample.ConfigureExpression
             Debugger.Info("初始化场景角色数据成功！");
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this MainDataComponent self)
         {
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this MainDataComponent self)
         {
             GameEngine.GameApi.DestroyActor(self.player);

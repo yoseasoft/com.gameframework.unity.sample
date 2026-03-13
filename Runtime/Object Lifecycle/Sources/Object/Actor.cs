@@ -26,8 +26,8 @@ namespace GameFramework.Sample.ObjectLifecycle
     /// <summary>
     /// 角色对象基类
     /// </summary>
-    [GameEngine.CActorClass("Actor")]
-    internal abstract class Actor : GameEngine.CActor
+    [GActorClass("Actor")]
+    internal abstract class Actor : GActor
     {
         protected override void OnInitialize()
         {

@@ -28,55 +28,55 @@ namespace GameFramework.Sample.PerformanceAnalysis
     /// </summary>
     static class GameTransformComponentSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Initialize)]
+        [OnInitialize]
         static void Initialize(this GameTransformComponent self)
         {
             GameTransformComponent.transform_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Startup)]
+        [OnStartup]
         static void Startup(this GameTransformComponent self)
         {
             GameTransformComponent.transform_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this GameTransformComponent self)
         {
             GameTransformComponent.transform_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this GameTransformComponent self)
         {
             GameTransformComponent.transform_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this GameTransformComponent self)
         {
             GameTransformComponent.transform_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Shutdown)]
+        [OnShutdown]
         static void Shutdown(this GameTransformComponent self)
         {
             GameTransformComponent.transform_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Cleanup)]
+        [OnCleanup]
         static void Cleanup(this GameTransformComponent self)
         {
             GameTransformComponent.transform_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        [OnUpdate]
         static void Update(this GameTransformComponent self)
         {
             self.position = self.position + UnityEngine.Vector3.one;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.LateUpdate)]
+        [OnLateUpdate]
         static void LateUpdate(this GameTransformComponent self)
         {
             self.position = self.position + UnityEngine.Vector3.one;

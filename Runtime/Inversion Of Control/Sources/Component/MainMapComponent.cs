@@ -26,8 +26,8 @@ namespace GameFramework.Sample.InversionOfControl
     /// <summary>
     /// 主场景地图组件类
     /// </summary>
-    [GameEngine.CComponentClass("MainMapComponent")]
-    internal class MainMapComponent : GameEngine.CComponent
+    [GComponentClass("MainMapComponent")]
+    internal class MainMapComponent : GComponent
     {
         public Player player;
 

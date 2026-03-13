@@ -26,8 +26,8 @@ namespace GameFramework.Sample.StateTransition
     /// <summary>
     /// 战斗对象基类
     /// </summary>
-    [GameEngine.CActorClass("Soldier")]
-    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
+    [GActorClass("Soldier")]
+    [GComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
     internal class Soldier : Actor
     {
     }

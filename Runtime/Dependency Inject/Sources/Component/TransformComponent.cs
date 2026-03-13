@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// 变换组件类
     /// </summary>
-    [GameEngine.CComponentClass("TransformComponent")]
-    internal class TransformComponent : GameEngine.CComponent
+    [GComponentClass("TransformComponent")]
+    internal class TransformComponent : GComponent
     {
         public UnityEngine.Vector3 position;
     }

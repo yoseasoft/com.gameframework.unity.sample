@@ -26,8 +26,8 @@ namespace GameFramework.Sample.InversionOfControl
     /// <summary>
     /// 攻击组件类
     /// </summary>
-    [GameEngine.CComponentClass("AttackComponent")]
-    internal class AttackComponent : GameEngine.CComponent
+    [GComponentClass("AttackComponent")]
+    internal class AttackComponent : GComponent
     {
         public AttackComponent()
         {

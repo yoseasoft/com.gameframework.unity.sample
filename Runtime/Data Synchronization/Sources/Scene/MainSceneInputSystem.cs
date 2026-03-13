@@ -30,7 +30,7 @@ namespace GameFramework.Sample.DataSynchronization
     /// </summary>
     static class MainSceneInputSystem
     {
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
+        [OnGlobalInput((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
         static void OnDisplayAllObjects(int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
@@ -43,22 +43,22 @@ namespace GameFramework.Sample.DataSynchronization
                 Debugger.Info(mainDataComponent.monsters[n].ToString());
             }
 
-            (GameEngine.GameApi.GetCurrentScene() as MainScene).PrintUsage();
+            GameEngine.GameApi.GetCurrentScene<MainScene>().PrintUsage();
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Z, GameEngine.InputOperationType.Released)]
+        [OnGlobalInput((int) UnityEngine.KeyCode.Z, GameEngine.InputOperationType.Released)]
         static void TestReplicateTags_1(int keycode, int operationType)
         {
             GameEngine.GameApi.Push("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed);
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.X, GameEngine.InputOperationType.Released)]
+        [OnGlobalInput((int) UnityEngine.KeyCode.X, GameEngine.InputOperationType.Released)]
         static void TestReplicateTags_2(int keycode, int operationType)
         {
             GameEngine.GameApi.Push("player.skill", GameEngine.ReplicateAnnounceType.Changed);
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        [OnGlobalInput((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
         static void OnCreatePlayerObject(int keycode, int operationType)
         {
             Player player = DataBuilder.CreatePlayer();
@@ -67,7 +67,7 @@ namespace GameFramework.Sample.DataSynchronization
             mainDataComponent.players.Add(player);
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        [OnGlobalInput((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
         static void OnDestroyPlayerObject(int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
@@ -78,7 +78,7 @@ namespace GameFramework.Sample.DataSynchronization
             }
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
+        [OnGlobalInput((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
         static void OnCreateMonsterObject(int keycode, int operationType)
         {
             Monster monster = DataBuilder.CreateMonster();
@@ -87,7 +87,7 @@ namespace GameFramework.Sample.DataSynchronization
             mainDataComponent.monsters.Add(monster);
         }
 
-        [GameEngine.OnInputDispatchCall((int) UnityEngine.KeyCode.Alpha4, GameEngine.InputOperationType.Released)]
+        [OnGlobalInput((int) UnityEngine.KeyCode.Alpha4, GameEngine.InputOperationType.Released)]
         static void OnDestroyMonsterObject(int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();

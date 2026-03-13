@@ -28,24 +28,24 @@ namespace GameFramework.Sample.InversionOfControl
     /// </summary>
     static class MainSceneSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void BeforeAwake(this MainScene self)
         {
-            self.GetComponent<MainMapComponent>().player = GameEngine.ActorHandler.Instance.CreateActor<Player>();
+            self.GetComponent<MainMapComponent>().player = GameEngine.GameApi.CreateActor<Player>();
 
             Debugger.Info("目标场景实例{%t}前置唤醒完成！", self);
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void BeforeStart(this MainScene self)
         {
             Debugger.Info("目标场景实例{%t}前置启动完成！", self);
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void AfterDestroy(this MainScene self)
         {
-            GameEngine.ActorHandler.Instance.DestroyActor(self.GetComponent<MainMapComponent>().player);
+            GameEngine.GameApi.DestroyActor(self.GetComponent<MainMapComponent>().player);
 
             Debugger.Info("目标场景实例{%t}后置销毁完成！", self);
         }

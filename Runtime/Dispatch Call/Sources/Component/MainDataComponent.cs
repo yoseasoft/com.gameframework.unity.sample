@@ -28,8 +28,8 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 主数据组件类
     /// </summary>
-    [GameEngine.CComponentClass("MainDataComponent")]
-    internal class MainDataComponent : GameEngine.CComponent
+    [GComponentClass("MainDataComponent")]
+    internal class MainDataComponent : GComponent
     {
         public Player player = null;
 

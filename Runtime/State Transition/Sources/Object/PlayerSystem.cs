@@ -28,18 +28,18 @@ namespace GameFramework.Sample.StateTransition
     /// </summary>
     static class PlayerSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this Player self)
         {
             self.context = new PlayerContext();
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this Player self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        [OnUpdate]
         static void Update(this Player self)
         {
             PlayerContext ctx = self.context;
@@ -57,7 +57,7 @@ namespace GameFramework.Sample.StateTransition
             }
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this Player self)
         {
         }

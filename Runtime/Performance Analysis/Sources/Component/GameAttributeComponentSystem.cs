@@ -28,55 +28,55 @@ namespace GameFramework.Sample.PerformanceAnalysis
     /// </summary>
     static class GameAttributeComponentSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Initialize)]
+        [OnInitialize]
         static void Initialize(this GameAttributeComponent self)
         {
             GameAttributeComponent.attribute_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Startup)]
+        [OnStartup]
         static void Startup(this GameAttributeComponent self)
         {
             GameAttributeComponent.attribute_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void Awake(this GameAttributeComponent self)
         {
             GameAttributeComponent.attribute_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void Start(this GameAttributeComponent self)
         {
             GameAttributeComponent.attribute_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void Destroy(this GameAttributeComponent self)
         {
             GameAttributeComponent.attribute_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Shutdown)]
+        [OnShutdown]
         static void Shutdown(this GameAttributeComponent self)
         {
             GameAttributeComponent.attribute_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Cleanup)]
+        [OnCleanup]
         static void Cleanup(this GameAttributeComponent self)
         {
             GameAttributeComponent.attribute_lifecycle_count++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Update)]
+        [OnUpdate]
         static void Update(this GameAttributeComponent self)
         {
             self.level++;
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.LateUpdate)]
+        [OnLateUpdate]
         static void LateUpdate(this GameAttributeComponent self)
         {
             self.level++;

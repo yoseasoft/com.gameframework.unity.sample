@@ -28,22 +28,22 @@ namespace GameFramework.Sample.DynamicInvokeGenerator
     /// </summary>
     static class MainSceneSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Awake)]
+        [OnAwake]
         static void OnAwake(this MainScene self)
         {
         }
 
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void OnStart(this MainScene self)
         {
         }
 
-        [GameEngine.OnAspectAfterCall(GameEngine.AspectBehaviourType.Destroy)]
+        [OnDestroy]
         static void OnDestroy(this MainScene self)
         {
         }
 
-        [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
+        [OnBeanInput((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
         static void OnSceneCaseRunningInputed(this MainScene self, int keycode, int operationType)
         {
             FunctionGenerationComparison.TestMemberFunctionBuild();

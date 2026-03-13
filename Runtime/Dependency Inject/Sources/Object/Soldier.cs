@@ -26,10 +26,10 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// 战斗对象基类
     /// </summary>
-    [GameEngine.CActorClass("Soldier")]
-    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
-    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(TransformComponent))]
-    [GameEngine.CComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
+    [GActorClass("Soldier")]
+    [GComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
+    [GComponentAutomaticActivationOfEntity(typeof(TransformComponent))]
+    [GComponentAutomaticActivationOfEntity(typeof(MoveComponent))]
     internal class Soldier : Actor
     {
     }

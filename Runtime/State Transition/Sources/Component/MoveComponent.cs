@@ -26,8 +26,8 @@ namespace GameFramework.Sample.StateTransition
     /// <summary>
     /// 移动组件类
     /// </summary>
-    [GameEngine.CComponentClass("MoveComponent")]
-    internal class MoveComponent : GameEngine.CComponent
+    [GComponentClass("MoveComponent")]
+    internal class MoveComponent : GComponent
     {
         public float move_length;
 

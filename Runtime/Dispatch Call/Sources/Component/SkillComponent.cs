@@ -28,8 +28,8 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 技能组件类
     /// </summary>
-    [GameEngine.CComponentClass("SkillComponent")]
-    internal class SkillComponent : GameEngine.CComponent
+    [GComponentClass("SkillComponent")]
+    internal class SkillComponent : GComponent
     {
         public class Skill
         {

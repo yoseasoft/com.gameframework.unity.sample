@@ -32,13 +32,13 @@ namespace GameFramework.Sample.PerformanceAnalysis
     /// </summary>
     static class MainSceneSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void OnStart(this MainScene self)
         {
             PrintUsage();
         }
 
-        [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        [OnBeanInput((int) UnityEngine.KeyCode.Alpha1, GameEngine.InputOperationType.Released)]
         static void OnSceneDataCreatingInputed(this MainScene self, int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -83,7 +83,7 @@ namespace GameFramework.Sample.PerformanceAnalysis
             PrintUsage();
         }
 
-        [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        [OnBeanInput((int) UnityEngine.KeyCode.Alpha2, GameEngine.InputOperationType.Released)]
         static void OnSceneDataRunningInputed(this MainScene self, int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -130,7 +130,7 @@ namespace GameFramework.Sample.PerformanceAnalysis
             PrintUsage();
         }
 
-        [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
+        [OnBeanInput((int) UnityEngine.KeyCode.Alpha3, GameEngine.InputOperationType.Released)]
         static void OnSceneDataPrintingInputed(this MainScene self, int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -152,7 +152,7 @@ namespace GameFramework.Sample.PerformanceAnalysis
             PrintUsage();
         }
 
-        [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.Alpha4, GameEngine.InputOperationType.Released)]
+        [OnBeanInput((int) UnityEngine.KeyCode.Alpha4, GameEngine.InputOperationType.Released)]
         static void OnSceneDataResettingInputed(this MainScene self, int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -184,7 +184,7 @@ namespace GameFramework.Sample.PerformanceAnalysis
             PrintUsage();
         }
 
-        [GameEngine.InputResponseBindingOfTarget((int) UnityEngine.KeyCode.Alpha5, GameEngine.InputOperationType.Released)]
+        [OnBeanInput((int) UnityEngine.KeyCode.Alpha5, GameEngine.InputOperationType.Released)]
         static void OnSceneDataRemovingInputed(this MainScene self, int keycode, int operationType)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
