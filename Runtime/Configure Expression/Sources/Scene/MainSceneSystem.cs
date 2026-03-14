@@ -28,7 +28,7 @@ namespace GameFramework.Sample.ConfigureExpression
     /// </summary>
     static class MainSceneSystem
     {
-        [GameEngine.OnAspectBeforeCall(GameEngine.AspectBehaviourType.Start)]
+        [OnStart]
         static void OnStart(this MainScene self)
         {
             self.PrintUsage();

@@ -28,13 +28,13 @@ namespace GameFramework.Sample.ConfigureExpression
     /// </summary>
     static class CombatApi
     {
-        [GameEngine.OnApiDispatchCall("震屏")]
+        [OnGlobalApi("震屏")]
         static void OnShakeScreen(string name, int time, float speed)
         {
             Debugger.Info($"震屏效果触发：name={name}，time={time}, speed={speed}");
         }
 
-        [GameEngine.OnApiDispatchCall("闪烁")]
+        [OnGlobalApi("闪烁")]
         static void OnBlinkScreen()
         {
             Debugger.Info($"闪烁效果触发");

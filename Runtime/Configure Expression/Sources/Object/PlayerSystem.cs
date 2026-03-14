@@ -43,7 +43,7 @@ namespace GameFramework.Sample.ConfigureExpression
         {
         }
 
-        [GameEngine.OnApiDispatchCall("钝帧")]
+        [OnGlobalApi("钝帧")]
         static void BluntFrame(this Player self, float duration, float rate)
         {
             Debugger.Info($"【{self.GetObjectName()}】钝帧效果触发：duration={duration}, rate={rate}");
