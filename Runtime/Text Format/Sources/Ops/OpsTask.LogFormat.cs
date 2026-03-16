@@ -30,7 +30,7 @@ namespace GameFramework.Sample.TextFormat
     /// </summary>
     static partial class OpsTask
     {
-        [OnGlobalInput(TaskCode_LogFormat, GameEngine.InputOperationType.Released)]
+        [OnInput(TaskCode_LogFormat, GameEngine.InputOperationType.Released)]
         static void TestLogFormat(int keycode, int operationType)
         {
             int num = 1976123159;

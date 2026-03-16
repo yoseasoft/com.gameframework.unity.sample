@@ -30,7 +30,7 @@ namespace GameFramework.Sample.DispatchCall
     /// </summary>
     static class MainSceneNotifySystem
     {
-        [OnBeanMessage(typeof(EnterWorldResp))]
+        [OnMessage(typeof(EnterWorldResp))]
         static void OnEnterWorldNotify(this MainScene self, EnterWorldResp message)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -47,7 +47,7 @@ namespace GameFramework.Sample.DispatchCall
             self.PrintUsage();
         }
 
-        [OnBeanMessage(typeof(LeaveWorldResp))]
+        [OnMessage(typeof(LeaveWorldResp))]
         static void OnLeaveWorldNotify(this MainScene self, LeaveWorldResp message)
         {
             MainDataComponent mainDataComponent = self.GetComponent<MainDataComponent>();
@@ -74,8 +74,8 @@ namespace GameFramework.Sample.DispatchCall
             self.PrintUsage();
         }
 
-        // [OnBeanMessage(typeof(LevelSpawnResp))]
-        [OnBeanMessage(ProtoOpcode.LevelSpawnResp)]
+        // [OnMessage(typeof(LevelSpawnResp))]
+        [OnMessage(ProtoOpcode.LevelSpawnResp)]
         static void OnLevelSpawnNotify(this MainScene self, ProtoBuf.Extension.IMessage msg) // LevelSpawnResp message)
         {
             LevelSpawnResp message = msg as LevelSpawnResp;

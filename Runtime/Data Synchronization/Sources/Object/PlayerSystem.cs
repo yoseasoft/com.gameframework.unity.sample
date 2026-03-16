@@ -43,25 +43,25 @@ namespace GameFramework.Sample.DataSynchronization
         {
         }
 
-        [OnGlobalReplicate("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
+        [OnReplicate("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
         static void OnPlayerChangedNotify(string tags, GameEngine.ReplicateAnnounceType announceType)
         {
             Debugger.Info("??????????????????");
         }
 
-        [OnGlobalReplicate("player.skill", GameEngine.ReplicateAnnounceType.Changed)]
+        [OnReplicate("player.skill", GameEngine.ReplicateAnnounceType.Changed)]
         static void OnPlayerSkillChangedNotify(string tags, GameEngine.ReplicateAnnounceType announceType)
         {
             Debugger.Info("!!!!!!!!!!!!!!!!!!!!");
         }
 
-        [OnGlobalReplicate(typeof(Player), "player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
+        [OnReplicate(typeof(Player), "player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
         static void OnPlayerChangedEachEveryoneNotify(Player player, string tags, GameEngine.ReplicateAnnounceType announceType)
         {
             Debugger.Info("?????????????????? player = {%s}", player.ToString());
         }
 
-        [OnBeanReplicate("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
+        [OnReplicate("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
         static void OnPlayerItemChangedBySelfNotify(this Player self, string tags, GameEngine.ReplicateAnnounceType announceType)
         {
             Debugger.Info("~~~~~~~~~~~~~~~~~~ player = {%s}", self.ToString());

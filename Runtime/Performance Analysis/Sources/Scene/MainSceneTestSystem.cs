@@ -39,7 +39,7 @@ namespace GameFramework.Sample.PerformanceAnalysis
             ++_count;
         }
 
-        [OnBeanInput((int) UnityEngine.KeyCode.Alpha6, GameEngine.InputOperationType.Released)]
+        [OnInput((int) UnityEngine.KeyCode.Alpha6, GameEngine.InputOperationType.Released)]
         static void OnSceneTestingInputed(this MainScene self, int keycode, int operationType)
         {
             Type targetType = typeof(MainSceneTestSystem);

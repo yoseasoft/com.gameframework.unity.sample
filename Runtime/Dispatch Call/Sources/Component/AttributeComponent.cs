@@ -39,13 +39,13 @@ namespace GameFramework.Sample.DispatchCall
 
         public int attack;
 
-        [OnBeanEvent(EventNotify.DisplayAttribute)]
+        [OnEvent(EventNotify.DisplayAttribute)]
         public void OnDisplayInfo(int eventID, params object[] args)
         {
             Debugger.Info("基于带参普通成员函数‘OnDisplayInfo’调用, 打印信息：{%s}", ToString());
         }
 
-        [OnBeanEvent(EventNotify.DisplayAttribute)]
+        [OnEvent(EventNotify.DisplayAttribute)]
         public void OnDisplayInfoWithNullParameter()
         {
             Debugger.Info("基于无参普通成员函数‘OnDisplayInfoWithNullParameter’调用, 打印信息：{%s}", ToString());

@@ -46,13 +46,13 @@ namespace GameFramework.Sample.DispatchCall
         {
         }
 
-        [OnBeanEvent(EventNotify.PlayerSearchAllEnemies)]
+        [OnEvent(EventNotify.PlayerSearchAllEnemies)]
         private static void OnEnemyDisplayInfo(this Monster self, int eventID, params object[] args)
         {
             Debugger.Info("怪物对象成功接收事件[{%d}]，信息输出：{%s}！", eventID, self.ToMonsterString());
         }
 
-        [OnBeanInput((int) UnityEngine.KeyCode.T, GameEngine.InputOperationType.Released)]
+        [OnInput((int) UnityEngine.KeyCode.T, GameEngine.InputOperationType.Released)]
         private static void OnTalkInputObserve(this Monster self, int keycode, int operationType)
         {
             string[] infos = new string[5];

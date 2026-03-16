@@ -30,7 +30,7 @@ namespace GameFramework.Sample.DispatchCall
     /// </summary>
     static class MainSceneInputSystem
     {
-        [OnGlobalInput((int) UnityEngine.KeyCode.E, GameEngine.InputOperationType.Released)]
+        [OnInput((int) UnityEngine.KeyCode.E, GameEngine.InputOperationType.Released)]
         static void OnEnterWorldMessageSend(int keycode, int operationType)
         {
             MainScene main = GameEngine.SceneHandler.Instance.GetCurrentScene() as MainScene;
@@ -43,7 +43,7 @@ namespace GameFramework.Sample.DispatchCall
             });
         }
 
-        [OnGlobalInput((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
+        [OnInput((int) UnityEngine.KeyCode.A, GameEngine.InputOperationType.Released)]
         static void OnLevelSpawnMessageSend(int keycode, int operationType)
         {
             List<MonsterInfo> monsters = new List<MonsterInfo>();
@@ -71,7 +71,7 @@ namespace GameFramework.Sample.DispatchCall
             });
         }
 
-        [OnGlobalInput((int) UnityEngine.KeyCode.Q, GameEngine.InputOperationType.Released)]
+        [OnInput((int) UnityEngine.KeyCode.Q, GameEngine.InputOperationType.Released)]
         static void OnLeaveWorldMessageSend(int keycode, int operationType)
         {
             GameEngine.GameApi.OnSimulationReceiveMessage(new LeaveWorldResp()

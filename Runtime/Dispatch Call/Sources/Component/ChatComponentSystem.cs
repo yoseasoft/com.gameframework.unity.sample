@@ -66,8 +66,8 @@ namespace GameFramework.Sample.DispatchCall
             self.messages = null;
         }
 
-        // [OnBeanMessage(typeof(ActorChatResp))]
-        [OnBeanMessage(ProtoOpcode.ActorChatResp)]
+        // [OnMessage(typeof(ActorChatResp))]
+        [OnMessage(ProtoOpcode.ActorChatResp)]
         static void OnChatResp(this ChatComponent self, ProtoBuf.Extension.IMessage msg) // ActorChatResp message)
         {
             ActorChatResp message = msg as ActorChatResp;

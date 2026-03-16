@@ -45,13 +45,13 @@ namespace GameFramework.Sample.DispatchCall
         {
         }
 
-        [OnBeanEvent(EventNotify.PlayerDisplayInfo)]
+        [OnEvent(EventNotify.PlayerDisplayInfo)]
         private static void OnPlayerDisplayInfo(this Player self, int eventID, params object[] args)
         {
             Debugger.Info("玩家对象成功接收事件[{%d}]，事件参数：{%s}，信息输出：{%s}！", eventID, NovaEngine.FormatString.Format(args), self.ToPlayerString());
         }
 
-        [OnBeanEvent(EventNotify.PlayerLockOneTarget)]
+        [OnEvent(EventNotify.PlayerLockOneTarget)]
         private static void OnPlayerLockOneTarget(this Player self, int eventID, params object[] args)
         {
             MainDataComponent mainDataComponent = GameEngine.SceneHandler.Instance.GetCurrentScene().GetComponent<MainDataComponent>();
@@ -92,7 +92,7 @@ namespace GameFramework.Sample.DispatchCall
             }
         }
 
-        [OnBeanEvent(EventNotify.PlayerChaseTarget)]
+        [OnEvent(EventNotify.PlayerChaseTarget)]
         private static void OnPlayerChaseTarget(this Player self)
         {
             Debugger.Info("玩家对象‘{%s}’开始移动！", self.GetComponent<IdentityComponent>().objectName);
@@ -100,10 +100,10 @@ namespace GameFramework.Sample.DispatchCall
             self.GetComponent<MoveComponent>().OnMovingStart();
         }
 
-        [OnBeanInput((int) UnityEngine.KeyCode.UpArrow, GameEngine.InputOperationType.Released)]
-        [OnBeanInput((int) UnityEngine.KeyCode.DownArrow, GameEngine.InputOperationType.Released)]
-        [OnBeanInput((int) UnityEngine.KeyCode.LeftArrow, GameEngine.InputOperationType.Released)]
-        [OnBeanInput((int) UnityEngine.KeyCode.RightArrow, GameEngine.InputOperationType.Released)]
+        [OnInput((int) UnityEngine.KeyCode.UpArrow, GameEngine.InputOperationType.Released)]
+        [OnInput((int) UnityEngine.KeyCode.DownArrow, GameEngine.InputOperationType.Released)]
+        [OnInput((int) UnityEngine.KeyCode.LeftArrow, GameEngine.InputOperationType.Released)]
+        [OnInput((int) UnityEngine.KeyCode.RightArrow, GameEngine.InputOperationType.Released)]
         private static void OnPlayerMoveTo(this Player self, int keycode, int operationType)
         {
             Debugger.Info("玩家对象‘{%s}’开始移动！", self.GetComponent<IdentityComponent>().objectName);

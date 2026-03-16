@@ -30,7 +30,7 @@ namespace GameFramework.Sample.TextFormat
     /// </summary>
     static partial class OpsTask
     {
-        [OnGlobalInput(TaskCode_DataCollection, GameEngine.InputOperationType.Released)]
+        [OnInput(TaskCode_DataCollection, GameEngine.InputOperationType.Released)]
         static void TestDataCollection(int keycode, int operationType)
         {
             int[] arr_int = new int[2];
