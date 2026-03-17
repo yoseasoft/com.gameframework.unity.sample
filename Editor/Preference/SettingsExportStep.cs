@@ -38,7 +38,7 @@ namespace GameFramework.Editor.Sample
     {
         const string TutorialSettingsAssetUrl = @"Assets/Resources/TutorialSettings.asset";
 
-        public void Install(Action onMessage, Action onComplete, Action onError, Action<string> addLog)
+        public void Install(Action onComplete, Action onError)
         {
             Debug.Log("PostInstallConfigurationExporter: 开始执行安装后配置资产创建");
 
@@ -62,7 +62,7 @@ namespace GameFramework.Editor.Sample
             });
         }
 
-        public void Uninstall(Action onMessage, Action onComplete, Action onError)
+        public void Uninstall(Action onComplete, Action onError)
         {
             Debug.Log("PostInstallConfigurationExporter: 执行卸载操作");
 
