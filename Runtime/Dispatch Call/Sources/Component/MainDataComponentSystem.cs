@@ -50,7 +50,7 @@ namespace GameFramework.Sample.DispatchCall
                     IdentityComponent identityComponent = monster.GetComponent<IdentityComponent>();
 
                     // 发送死亡通知
-                    GameEngine.GameApi.OnSimulationReceiveMessage(new ActorDieResp() { Uid = identityComponent.objectID });
+                    GameEngine.GameApi.OnMessageSimulation(new ActorDieResp() { Uid = identityComponent.objectID });
                 }
             }
         }
