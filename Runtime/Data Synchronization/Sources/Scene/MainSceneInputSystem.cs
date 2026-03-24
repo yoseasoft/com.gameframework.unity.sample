@@ -49,13 +49,13 @@ namespace GameFramework.Sample.DataSynchronization
         [OnInput(GameEngine.VirtualKeyCode.Z, GameEngine.InputOperationType.Released)]
         static void TestReplicateTags_1(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
-            GameEngine.GameApi.Push("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed);
+            GameEngine.GameApi.Send("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed);
         }
 
         [OnInput(GameEngine.VirtualKeyCode.X, GameEngine.InputOperationType.Released)]
         static void TestReplicateTags_2(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
-            GameEngine.GameApi.Push("player.skill", GameEngine.ReplicateAnnounceType.Changed);
+            GameEngine.GameApi.Send("player.skill", GameEngine.ReplicateAnnounceType.Changed);
         }
 
         [OnInput(GameEngine.VirtualKeyCode.Alpha1, GameEngine.InputOperationType.Released)]
