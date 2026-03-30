@@ -64,7 +64,7 @@ namespace GameFramework.Sample
 
         private static void LoadApplicationContexts()
         {
-            GameEngine.ApplicationContext.LoadApplicationConfigure(@"application", (path, ms) =>
+            GameEngine.ApplicationContext.Configure.LoadApplicationConfigure(@"application", (path, ms) =>
             {
                 string text = GetApplicationConfigByName(path);
                 byte[] buffer = Encoding.UTF8.GetBytes(text);

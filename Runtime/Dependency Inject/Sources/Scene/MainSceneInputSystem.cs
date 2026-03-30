@@ -59,9 +59,9 @@ namespace GameFramework.Sample.DependencyInject
             */
 
             // 卸载之前的Bean配置
-            GameEngine.ApplicationContext.UnloadAllBeanConfigureInfos();
+            GameEngine.ApplicationContext.Configure.UnloadAllBeanConfigureInfos();
 
-            GameEngine.ApplicationContext.LoadBeanConfigure(@"main", (path, ms) =>
+            GameEngine.ApplicationContext.Configure.LoadBeanConfigure(@"main", (path, ms) =>
             {
                 string text = BeanConfig.GetConfigByName(path);
                 byte[] buffer = Encoding.UTF8.GetBytes(text);
@@ -72,7 +72,7 @@ namespace GameFramework.Sample.DependencyInject
             });
 
             // 重新绑定Bean配置
-            GameEngine.ApplicationContext.RebindingBeanConfigureOfSymbols();
+            GameEngine.ApplicationContext.Configure.RebindingBeanConfigureOfSymbols();
         }
 
         [OnInput(GameEngine.VirtualKeyCode.Alpha2, GameEngine.InputOperationType.Released)]
