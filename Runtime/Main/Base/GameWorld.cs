@@ -88,6 +88,13 @@ namespace GameFramework.Sample
         }
 
         /// <summary>
+        /// 世界容器的重构运行函数
+        /// </summary>
+        public static void Rebuild()
+        {
+        }
+
+        /// <summary>
         /// 世界容器的重载运行函数
         /// </summary>
         /// <param name="commandType">类型标识</param>
