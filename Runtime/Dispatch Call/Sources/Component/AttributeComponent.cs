@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 属性组件类
     /// </summary>
-    [UComponentClass("AttributeComponent")]
-    internal class AttributeComponent : UComponent
+    [OnComponentConfigure("AttributeComponent")]
+    internal class AttributeComponent : GComponentWrapper
     {
         public int level;
 

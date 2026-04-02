@@ -28,8 +28,8 @@ namespace GameFramework.Sample.PerformanceAnalysis
     /// <summary>
     /// 主场景数据组件类
     /// </summary>
-    [UComponentClass("MainDataComponent")]
-    internal class MainDataComponent : UComponent
+    [OnComponentConfigure("MainDataComponent")]
+    internal class MainDataComponent : GComponentWrapper
     {
         public IList<NativePlayer> native_players = null;
 

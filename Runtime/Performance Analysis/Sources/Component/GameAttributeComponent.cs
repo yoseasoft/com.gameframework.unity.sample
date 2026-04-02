@@ -26,8 +26,8 @@ namespace GameFramework.Sample.PerformanceAnalysis
     /// <summary>
     /// 通过框架Proto实现的属性组件类
     /// </summary>
-    [UComponentClass("GameAttributeComponent")]
-    internal class GameAttributeComponent : UComponent
+    [OnComponentConfigure("GameAttributeComponent")]
+    internal class GameAttributeComponent : GComponentWrapper
     {
         public int level;
 

@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// 移动组件类
     /// </summary>
-    [UComponentClass("MoveComponent")]
-    internal class MoveComponent : UComponent
+    [OnComponentConfigure("MoveComponent")]
+    internal class MoveComponent : GComponentWrapper
     {
         public float speed;
     }

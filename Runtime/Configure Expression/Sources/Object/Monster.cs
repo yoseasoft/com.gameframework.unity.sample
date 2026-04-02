@@ -26,7 +26,7 @@ namespace GameFramework.Sample.ConfigureExpression
     /// <summary>
     /// 怪物对象基类
     /// </summary>
-    [UActorClass("Monster")]
+    [OnActorConfigure("Monster")]
     internal class Monster : Soldier
     {
     }

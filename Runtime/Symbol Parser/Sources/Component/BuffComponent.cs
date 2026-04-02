@@ -26,7 +26,7 @@ namespace GameFramework.Sample.SymbolParser
     /// <summary>
     /// Buff组件类
     /// </summary>
-    internal class BuffComponent : UComponent
+    internal class BuffComponent : GComponentWrapper
     {
     }
 }

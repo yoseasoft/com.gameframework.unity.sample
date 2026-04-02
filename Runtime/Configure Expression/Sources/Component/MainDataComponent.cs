@@ -28,8 +28,8 @@ namespace GameFramework.Sample.ConfigureExpression
     /// <summary>
     /// 主场景数据组件类
     /// </summary>
-    [UComponentClass("MainDataComponent")]
-    internal class MainDataComponent : UComponent
+    [OnComponentConfigure("MainDataComponent")]
+    internal class MainDataComponent : GComponentWrapper
     {
         public Player player;
 

@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 怪物对象基类
     /// </summary>
-    [UActorClass("Monster")]
-    [UComponentAutomaticActivationOfEntity(typeof(SpawnComponent))]
+    [OnActorConfigure("Monster")]
+    [GAutomaticallyActivatedComponent(typeof(SpawnComponent))]
     internal class Monster : Soldier
     {
     }

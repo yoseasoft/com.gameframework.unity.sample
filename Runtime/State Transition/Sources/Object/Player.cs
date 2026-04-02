@@ -26,8 +26,8 @@ namespace GameFramework.Sample.StateTransition
     /// <summary>
     /// 玩家对象基类
     /// </summary>
-    [UActorClass("Player")]
-    [UComponentAutomaticActivationOfEntity(typeof(StateComponent))]
+    [OnActorConfigure("Player")]
+    [GAutomaticallyActivatedComponent(typeof(StateComponent))]
     internal class Player : Soldier
     {
         public PlayerContext context;

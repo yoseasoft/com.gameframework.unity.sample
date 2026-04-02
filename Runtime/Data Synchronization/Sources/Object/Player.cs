@@ -28,8 +28,8 @@ namespace GameFramework.Sample.DataSynchronization
     /// <summary>
     /// 玩家对象基类
     /// </summary>
-    [UActorClass("Player")]
-    [UComponentAutomaticActivationOfEntity(typeof(InventoryComponent))]
+    [OnActorConfigure("Player")]
+    [GAutomaticallyActivatedComponent(typeof(InventoryComponent))]
     [GameEngine.CReplicateObject()]
     class Player : Soldier
     {

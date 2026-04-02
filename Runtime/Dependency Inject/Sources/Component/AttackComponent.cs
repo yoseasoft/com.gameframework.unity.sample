@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// 攻击组件类
     /// </summary>
-    [UComponentClass("AttackComponent")]
-    internal class AttackComponent : UComponent
+    [OnComponentConfigure("AttackComponent")]
+    internal class AttackComponent : GComponentWrapper
     {
         public Weapon weapon;
     }

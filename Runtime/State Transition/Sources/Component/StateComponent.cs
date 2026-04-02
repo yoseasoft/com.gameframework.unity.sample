@@ -26,8 +26,8 @@ namespace GameFramework.Sample.StateTransition
     /// <summary>
     /// 状态组件类
     /// </summary>
-    [UComponentClass("StateComponent")]
-    internal class StateComponent : UComponent
+    [OnComponentConfigure("StateComponent")]
+    internal class StateComponent : GComponentWrapper
     {
         public GameEngine.HFSM.StateMachine machine;
 

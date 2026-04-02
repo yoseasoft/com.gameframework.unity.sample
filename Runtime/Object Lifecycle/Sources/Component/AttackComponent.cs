@@ -26,8 +26,8 @@ namespace GameFramework.Sample.ObjectLifecycle
     /// <summary>
     /// 攻击组件类
     /// </summary>
-    [UComponentClass("AttackComponent")]
-    internal abstract class AttackComponent : UComponent
+    [OnComponentConfigure("AttackComponent")]
+    internal abstract class AttackComponent : GComponentWrapper
     {
     }
 }

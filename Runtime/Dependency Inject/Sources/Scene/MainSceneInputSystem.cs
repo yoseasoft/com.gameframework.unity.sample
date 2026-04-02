@@ -97,7 +97,7 @@ namespace GameFramework.Sample.DependencyInject
             int r = NovaEngine.Utility.Random.Next(beanNames.Count);
             string beanName = beanNames[r];
 
-            mainDataComponent.targetObject = GameEngine.ApplicationContext.CreateBean(beanName) as UActor;
+            mainDataComponent.targetObject = GameEngine.ApplicationContext.CreateBean(beanName) as GActorWarpper;
             Debugger.Info($"成功创建名为{beanName}的Bean对象实例！");
         }
 
@@ -111,7 +111,7 @@ namespace GameFramework.Sample.DependencyInject
                 return;
             }
 
-            UActor actor = mainDataComponent.targetObject;
+            GActorWarpper actor = mainDataComponent.targetObject;
 
             StringBuilder sb = new StringBuilder();
             sb.Append($"类型={NovaEngine.Utility.Text.GetFullName(actor.GetType())}，");

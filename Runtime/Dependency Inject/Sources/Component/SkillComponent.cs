@@ -28,8 +28,8 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// 技能组件类
     /// </summary>
-    [UComponentClass("SkillComponent")]
-    internal class SkillComponent : UComponent
+    [OnComponentConfigure("SkillComponent")]
+    internal class SkillComponent : GComponentWrapper
     {
         public class SkillInfo
         {

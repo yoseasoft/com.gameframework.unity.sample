@@ -26,8 +26,8 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// 武器对象基类
     /// </summary>
-    [UObjectClass("Weapon")]
-    internal class Weapon : UObject
+    [OnObjectConfigure("Weapon")]
+    internal class Weapon : GObjectWrapper
     {
     }
 }

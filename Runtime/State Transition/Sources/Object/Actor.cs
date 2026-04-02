@@ -26,9 +26,9 @@ namespace GameFramework.Sample.StateTransition
     /// <summary>
     /// 角色对象基类
     /// </summary>
-    [UActorClass("Actor")]
-    [UComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
-    internal abstract class Actor : UActor
+    [OnActorConfigure("Actor")]
+    [GAutomaticallyActivatedComponent(typeof(AttributeComponent))]
+    internal abstract class Actor : GActorWarpper
     {
     }
 }

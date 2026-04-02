@@ -28,8 +28,8 @@ namespace GameFramework.Sample.DataSynchronization
     /// <summary>
     /// 主场景数据组件类
     /// </summary>
-    [UComponentClass("MainDataComponent")]
-    class MainDataComponent : UComponent
+    [OnComponentConfigure("MainDataComponent")]
+    class MainDataComponent : GComponentWrapper
     {
         public IList<Player> players;
         public IList<Monster> monsters;

@@ -28,8 +28,8 @@ namespace GameFramework.Sample.DispatchCall
     /// <summary>
     /// 主数据组件类
     /// </summary>
-    [UComponentClass("MainDataComponent")]
-    internal class MainDataComponent : UComponent
+    [OnComponentConfigure("MainDataComponent")]
+    internal class MainDataComponent : GComponentWrapper
     {
         public Player player = null;
 

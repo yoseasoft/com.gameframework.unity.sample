@@ -26,7 +26,7 @@ namespace GameFramework.Sample.TextFormat
     /// <summary>
     /// 移动组件类
     /// </summary>
-    internal class MoveComponent : UComponent
+    internal class MoveComponent : GComponentWrapper
     {
         public float interval;
         public float escapedTime;

@@ -29,8 +29,8 @@ namespace GameFramework.Sample.DataSynchronization
     /// <summary>
     /// 属性组件类
     /// </summary>
-    [UComponentClass("AttributeComponent")]
-    internal class AttributeComponent : UComponent
+    [OnComponentConfigure("AttributeComponent")]
+    internal class AttributeComponent : GComponentWrapper
     {
         [GameEngine.CReplicateField()]
         public int level;

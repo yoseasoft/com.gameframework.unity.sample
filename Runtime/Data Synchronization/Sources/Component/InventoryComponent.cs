@@ -29,8 +29,8 @@ namespace GameFramework.Sample.DataSynchronization
     /// <summary>
     /// 背包组件类
     /// </summary>
-    [UComponentClass("InventoryComponent")]
-    internal class InventoryComponent : UComponent
+    [OnComponentConfigure("InventoryComponent")]
+    internal class InventoryComponent : GComponentWrapper
     {
         public class ItemInfo
         {

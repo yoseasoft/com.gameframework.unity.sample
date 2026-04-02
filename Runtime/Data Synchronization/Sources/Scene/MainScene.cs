@@ -26,9 +26,9 @@ namespace GameFramework.Sample.DataSynchronization
     /// <summary>
     /// 主场景类
     /// </summary>
-    [USceneClass("Main")]
-    [UComponentAutomaticActivationOfEntity(typeof(MainDataComponent))]
-    internal class MainScene : UScene
+    [OnSceneConfigure("Main")]
+    [GAutomaticallyActivatedComponent(typeof(MainDataComponent))]
+    internal class MainScene : GSceneWrapper
     {
     }
 }

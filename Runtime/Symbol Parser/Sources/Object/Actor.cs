@@ -26,9 +26,9 @@ namespace GameFramework.Sample.SymbolParser
     /// <summary>
     /// 角色对象基类
     /// </summary>
-    [UActorClass("Actor")]
-    [UComponentAutomaticActivationOfEntity(typeof(AttributeComponent))]
-    internal abstract class Actor : UActor, IBuild
+    [OnActorConfigure("Actor")]
+    [GAutomaticallyActivatedComponent(typeof(AttributeComponent))]
+    internal abstract class Actor : GActorWarpper, IBuild
     {
         public void OnBuild()
         {

@@ -28,8 +28,8 @@ namespace GameFramework.Sample.DataSynchronization
     /// <summary>
     /// 孵化组件类
     /// </summary>
-    [UComponentClass("SpawnComponent")]
-    internal class SpawnComponent : UComponent
+    [OnComponentConfigure("SpawnComponent")]
+    internal class SpawnComponent : GComponentWrapper
     {
         public UnityEngine.Vector3 born_position;
 

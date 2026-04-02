@@ -26,8 +26,8 @@ namespace GameFramework.Sample.StateTransition
     /// <summary>
     /// 属性组件类
     /// </summary>
-    [UComponentClass("AttributeComponent")]
-    internal class AttributeComponent : UComponent
+    [OnComponentConfigure("AttributeComponent")]
+    internal class AttributeComponent : GComponentWrapper
     {
         public string name;
     }

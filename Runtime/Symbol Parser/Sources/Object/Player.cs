@@ -26,8 +26,8 @@ namespace GameFramework.Sample.SymbolParser
     /// <summary>
     /// 玩家对象基类
     /// </summary>
-    [UActorClass("Player")]
-    [UComponentAutomaticActivationOfEntity(typeof(AttackComponent))]
+    [OnActorConfigure("Player")]
+    [GAutomaticallyActivatedComponent(typeof(AttackComponent))]
     internal class Player : Soldier, IEquip
     {
         public void OnEquip(int itemID)

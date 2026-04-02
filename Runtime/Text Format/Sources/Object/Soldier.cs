@@ -28,7 +28,7 @@ namespace GameFramework.Sample.TextFormat
     /// <summary>
     /// 战斗对象基类
     /// </summary>
-    [UActorClass("Soldier")]
+    [OnActorConfigure("Soldier")]
     internal class Soldier : Actor
     {
         private int tag;

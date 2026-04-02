@@ -26,7 +26,7 @@ namespace GameFramework.Sample.DependencyInject
     /// <summary>
     /// 玩家对象基类
     /// </summary>
-    [UActorClass("Player")]
+    [OnActorConfigure("Player")]
     internal class Player : Soldier
     {
         public Buff buff;
