@@ -30,7 +30,7 @@ namespace GameFramework.Sample.DataSynchronization
     /// </summary>
     [OnActorConfigure("Player")]
     [GAutomaticallyActivatedComponent(typeof(InventoryComponent))]
-    [GameEngine.CReplicateObject()]
+    [OnReplicateObject]
     class Player : Soldier
     {
         public override string ToString()

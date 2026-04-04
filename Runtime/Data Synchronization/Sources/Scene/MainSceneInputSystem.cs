@@ -58,16 +58,18 @@ namespace GameFramework.Sample.DataSynchronization
             GameEngine.GameApi.Send("player.skill", GameEngine.ReplicateAnnounceType.Changed);
         }
 
-        [OnInput(GameEngine.VirtualKeyCode.Alpha1, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.Q, GameEngine.InputOperationType.Released)]
         static void OnCreatePlayerObject(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             Player player = DataBuilder.CreatePlayer();
 
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
             mainDataComponent.players.Add(player);
+
+            GameEngine.GameApi.GetCurrentScene<MainScene>().PrintUsage();
         }
 
-        [OnInput(GameEngine.VirtualKeyCode.Alpha2, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.W, GameEngine.InputOperationType.Released)]
         static void OnDestroyPlayerObject(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
@@ -76,18 +78,22 @@ namespace GameFramework.Sample.DataSynchronization
                 GameEngine.GameApi.DestroyActor(mainDataComponent.players[0]);
                 mainDataComponent.players.RemoveAt(0);
             }
+
+            GameEngine.GameApi.GetCurrentScene<MainScene>().PrintUsage();
         }
 
-        [OnInput(GameEngine.VirtualKeyCode.Alpha3, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.E, GameEngine.InputOperationType.Released)]
         static void OnCreateMonsterObject(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             Monster monster = DataBuilder.CreateMonster();
 
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
             mainDataComponent.monsters.Add(monster);
+
+            GameEngine.GameApi.GetCurrentScene<MainScene>().PrintUsage();
         }
 
-        [OnInput(GameEngine.VirtualKeyCode.Alpha4, GameEngine.InputOperationType.Released)]
+        [OnInput(GameEngine.VirtualKeyCode.R, GameEngine.InputOperationType.Released)]
         static void OnDestroyMonsterObject(GameEngine.VirtualKeyCode keycode, GameEngine.InputOperationType operationType)
         {
             MainDataComponent mainDataComponent = GameEngine.GameApi.GetCurrentSceneComponent<MainDataComponent>();
@@ -96,6 +102,8 @@ namespace GameFramework.Sample.DataSynchronization
                 GameEngine.GameApi.DestroyActor(mainDataComponent.monsters[0]);
                 mainDataComponent.monsters.RemoveAt(0);
             }
+
+            GameEngine.GameApi.GetCurrentScene<MainScene>().PrintUsage();
         }
     }
 }

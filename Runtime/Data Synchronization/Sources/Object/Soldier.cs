@@ -35,7 +35,7 @@ namespace GameFramework.Sample.DataSynchronization
     [GAutomaticallyActivatedComponent(typeof(SkillComponent))]
     abstract class Soldier : GActorWarpper
     {
-        [GameEngine.CReplicateId()]
+        [OnReplicateId]
         public int uid;
 
         public override string ToString()

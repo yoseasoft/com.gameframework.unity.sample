@@ -30,21 +30,23 @@ namespace GameFramework.Sample.DataSynchronization
     /// 属性组件类
     /// </summary>
     [OnComponentConfigure("AttributeComponent")]
+    [OnReplicateObject("attribute")]
     internal class AttributeComponent : GComponentWrapper
     {
-        [GameEngine.CReplicateField()]
+        [OnReplicateField]
         public int level;
 
-        [GameEngine.CReplicateField()]
+        [OnReplicateField]
         public int exp;
 
-        [GameEngine.CReplicateField()]
-        public int health;
+        private int _health;
+        [OnReplicateProperty]
+        public int health { get { return _health; } set { _health = value; OnPropertyChanged(); } }
 
-        [GameEngine.CReplicateField()]
+        [OnReplicateField]
         public int energy;
 
-        [GameEngine.CReplicateField()]
+        [OnReplicateField]
         public int attack;
 
         public override string ToString()

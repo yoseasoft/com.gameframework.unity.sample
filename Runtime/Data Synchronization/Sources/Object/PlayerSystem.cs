@@ -43,6 +43,18 @@ namespace GameFramework.Sample.DataSynchronization
         {
         }
 
+        [OnInput(GameEngine.VirtualKeyCode.Keypad1, GameEngine.InputOperationType.Released)]
+        static void OnAlpha1Click(this Player self, GameEngine.VirtualKeyCode keyCode, GameEngine.InputOperationType operationType)
+        {
+            self.GetComponent<IdentityComponent>().objectName = "yukie";
+        }
+
+        [OnInput(GameEngine.VirtualKeyCode.Keypad2, GameEngine.InputOperationType.Released)]
+        static void OnAlpha2Click(this Player self, GameEngine.VirtualKeyCode keyCode, GameEngine.InputOperationType operationType)
+        {
+            self.GetComponent<AttributeComponent>().health = 10;
+        }
+
         [OnReplicate("player.inventory.item", GameEngine.ReplicateAnnounceType.Changed)]
         static void OnPlayerChangedNotify(string tags, GameEngine.ReplicateAnnounceType announceType)
         {
@@ -65,6 +77,18 @@ namespace GameFramework.Sample.DataSynchronization
         static void OnPlayerItemChangedBySelfNotify(this Player self, string tags, GameEngine.ReplicateAnnounceType announceType)
         {
             Debugger.Info("~~~~~~~~~~~~~~~~~~ player = {%s}", self.ToString());
+        }
+
+        [OnReplicate("player.object_name", GameEngine.ReplicateAnnounceType.Changed)]
+        static void OnPlayerIdentityNameChanged(this Player self, string tags, GameEngine.ReplicateAnnounceType announceType)
+        {
+            Debugger.Info("玩家对象【{%d}】名称被改变！", self.uid);
+        }
+
+        [OnReplicate("player.attribute.health", GameEngine.ReplicateAnnounceType.Changed)]
+        static void OnPlayerAttributeHealthChanged(this Player self, string tags, GameEngine.ReplicateAnnounceType announceType)
+        {
+            Debugger.Info("玩家对象【{%d}】生命值被改变！", self.uid);
         }
     }
 }

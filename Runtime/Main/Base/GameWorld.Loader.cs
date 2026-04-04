@@ -33,16 +33,23 @@ namespace GameFramework.Sample
         static IDictionary<string, string> _dataConfigures = new Dictionary<string, string>()
         {
             { @"application", ApplicationConfigureFile },
+            { @"module", ModuleConfigureFile },
         };
 
         const string ApplicationConfigureFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
                 <root>
                     <!-- 配置热加载模块 -->
-                    <hot-module name=""GameFramework.Protocol.Protobuf""/>
-                    <hot-module name=""GameFramework.View.Fairygui""/>
+                    <module-import url=""module""/>
 
                     <!-- 配置bean文件导入 -->
                     <!-- bean-import url=""bean""/ -->
+                </root>";
+
+        const string ModuleConfigureFile = @"<?xml version=""1.0"" encoding=""utf-8""?>
+                <root>
+                    <!-- 配置热加载模块 -->
+                    <hot-load name=""GameFramework.Protocol.Protobuf""/>
+                    <hot-load name=""GameFramework.View.Fairygui""/>
                 </root>";
 
         private static IList<string> _waitingLoadAssemblyNames = null;

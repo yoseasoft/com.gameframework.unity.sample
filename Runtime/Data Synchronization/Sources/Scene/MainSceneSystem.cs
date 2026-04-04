@@ -56,7 +56,7 @@ namespace GameFramework.Sample.DataSynchronization
 
         public static void PrintUsage(this MainScene self)
         {
-            Debugger.Info(@"使用说明：Ａ输出对象信息；R待定；①创建玩家实例；②销毁玩家实例；③创建怪物实例；④销毁怪物实例；⑤待定；⑥待定；");
+            Debugger.Info(@"使用说明：Ａ输出对象信息；R待定；Q创建玩家实例；W销毁玩家实例；E创建怪物实例；R销毁怪物实例；T待定；");
         }
     }
 }

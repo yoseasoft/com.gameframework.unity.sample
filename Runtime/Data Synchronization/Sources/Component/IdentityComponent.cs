@@ -32,11 +32,12 @@ namespace GameFramework.Sample.DataSynchronization
     [OnComponentConfigure("IdentityComponent")]
     internal class IdentityComponent : GComponentWrapper
     {
-        [GameEngine.CReplicateField("object_type")]
+        [OnReplicateField("object_type")]
         public int objectType;
 
-        [GameEngine.CReplicateField("object_name")]
-        public string objectName;
+        private string _objectName;
+        [OnReplicateProperty("object_name")]
+        public string objectName { get => _objectName; set { _objectName = value; OnPropertyChanged(); } }
 
         public override string ToString()
         {
